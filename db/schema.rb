@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20170225002251) do
   enable_extension "postgis"
 
   create_table "waypoints", force: :cascade do |t|
-    t.geography "coordinates", limit: {:srid=>4326, :type=>"point", :geographic=>true}
-    t.datetime  "created_at",                                                           null: false
-    t.datetime  "updated_at",                                                           null: false
+    t.geography "location",   limit: {:srid=>4326, :type=>"point", :geographic=>true}
+    t.datetime  "created_at",                                                          null: false
+    t.datetime  "updated_at",                                                          null: false
   end
 
 end
