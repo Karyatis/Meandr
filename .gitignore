@@ -9,11 +9,8 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
-<<<<<<< HEAD
 /log/development.log
-=======
 log/development.log
->>>>>>> master
 
 # Used by dotenv library to load environment variables.
 .env
