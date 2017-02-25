@@ -27,3 +27,9 @@ DEPRECATION WARNING: prepare! is deprecated and will be removed from Rails 5.1 (
   [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
