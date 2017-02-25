@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
+$(document).ready(){})
 function initMap() {
   function success(pos) {
     var crd = pos.coords;
