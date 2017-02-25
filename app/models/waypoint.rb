@@ -1,7 +1,7 @@
 class Waypoint < ApplicationRecord
 
   def self.waypoints_in_radius_of(current_waypoint, search_radius) #point, distance
-    waypoints_in_radius = Waypoint.all.select { |waypoint| waypoint.find_distance_to(current_waypoint) <= search_radius}
+    Waypoint.all.select { |waypoint| waypoint.find_distance_to(current_waypoint) <= search_radius}
   end
 
   def closer_to_end(current_waypoint, destination)
@@ -21,14 +21,20 @@ class Waypoint < ApplicationRecord
     radius = full_distance * modifier
   end
 
-  def meander()
-    # find all waypoints within radius of current waypoint
-    # select those that are closer to end point
-    # select one from ^ at random
-    # add to aggregate array of coords/waypoints => return it
-  end
 
 end
 
-    # legal_waypoints = waypoints_in_radius.select { |waypoint| waypoint.closer_to_end(current_waypoint, destination)}
+  def choose_next_waypoint(current_waypoint, destination, modifier)
+    # find all waypoints within radius of current waypoint
+    waypoints_in_radius = Waypoint.waypoints_in_radius_of(current_waypoint, search_radius)
+    # select those that are closer to end point
+    waypoints_nearer_destination = waypoints_in_radius.select { |waypoint| waypoint.closer_to_end(current_waypoint, destination)}
+    # select one from ^ at random
+    next_waypoint = waypoints_nearer_destination.sample
+  end
 
+  def meander(current_waypoint, destination)
+
+
+    # add to aggregate array of coords/waypoints => return it
+  end
