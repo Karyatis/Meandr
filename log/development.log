@@ -188,3 +188,9 @@ Processing by WelcomeController#index as HTML
   Rendering welcome/index.html.erb within layouts/application
   Rendered welcome/index.html.erb within layouts/application (1.5ms)
 Completed 200 OK in 465ms (Views: 453.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/PatrickJHoban/devbootcamp/phase3attempt1/wk8day7/Meandr/config/environment.rb:5)
