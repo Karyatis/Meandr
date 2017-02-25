@@ -1,1 +1,11 @@
 # Logfile created on 2017-02-25 12:37:05 -0600 by logger.rb/47272
+D, [2017-02-25T15:20:00.233686 #66113] DEBUG -- : undefined method `POINT' for #<WaypointsController:0x007fbd31e0cd60>
+D, [2017-02-25T15:20:00.234296 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T15:21:59.480619 #66113] DEBUG -- : undefined method `POINT' for #<WaypointsController:0x007fbd31db0e48>
+D, [2017-02-25T15:21:59.481924 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T15:23:01.948008 #66113] DEBUG -- : undefined method `POINT' for #<WaypointsController:0x007fbd2e7c1990>
+D, [2017-02-25T15:23:01.948952 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T15:25:42.472952 #66113] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T15:25:42.473821 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:8:in `create'"]
+D, [2017-02-25T15:30:23.246668 #66113] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T15:30:23.247842 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:8:in `create'"]

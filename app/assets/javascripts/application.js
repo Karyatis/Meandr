@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(){})
+
 function initMap() {
   function success(pos) {
     var crd = pos.coords;
@@ -27,9 +27,26 @@ function initMap() {
     position: myLatLng,
     map: map,
     title: 'Hello World!'
+
   });
+  saveLocation(myLatLng);
 };
   $("#button").on("click", function(){
     navigator.geolocation.getCurrentPosition(success);
   })
 }
+
+function saveLocation(myLatLng) {
+  $.ajax({
+    url: '/waypoints',
+    method: 'post',    
+    data: {location: myLatLng},
+    })
+    .done(function(response) { 
+      console.log("success");
+      console.log(response);
+    })
+    .fail(function() { 
+      console.log("error");
+    })
+} 
