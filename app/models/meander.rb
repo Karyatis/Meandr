@@ -15,6 +15,10 @@ class Meander < ApplicationRecord
     # points_of_interest ||= []??
     #will return nil if none were found
     next_waypoint = choose_next_waypoint(current_waypoint, destination, modifier)
+    # p "Next Waypoint"
+    # p next_waypoint
+    # p "Is it closer to the end?"
+    # p next_waypoint.closer_to_end(current_waypoint, destination) if next_waypoint != nil
     if next_waypoint == nil
       if modifier < 1.0
         modifier += 0.1
@@ -25,6 +29,8 @@ class Meander < ApplicationRecord
       end
     else
       points_of_interest << next_waypoint
+      # p "Points of Interest Array"
+      # p points_of_interest
       points_of_interest << route_path(next_waypoint, destination, modifier, points_of_interest)
     end
     points_of_interest
@@ -34,5 +40,4 @@ class Meander < ApplicationRecord
   def meander(current_waypoint, destination)
     route_path(current_waypoint, destination, 0.3)
   end
-
 end

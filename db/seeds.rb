@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Waypoint.create(location: 'POINT(41.876264 -87.653237)') #0 4dbc
-Waypoint.create(location: 'POINT(41.879635 -87.647251)') #1 5dugans
-Waypoint.create(location: 'POINT(41.876711 -87.657272)') #2 6wise owl
-Waypoint.create(location: 'POINT(41.874868 -87.658079)') #3 7UIC
-Waypoint.create(location: 'POINT(41.875501 -87.648917)') #4 8blue line
-Waypoint.create(location: 'POINT(41.871930 -87.648022)') #5 9student center
-Waypoint.create(location: 'POINT(41.884634 -87.647656)') #6 10Au Cheval
+Waypoint.create(location: 'POINT(41.876451 -87.653213)') #0 4dbc
+Waypoint.create(location: 'POINT(41.879618 -87.647487)') #1 5dugans
+Waypoint.create(location: 'POINT(41.876647 -87.657238)') #2 6wise owl
+Waypoint.create(location: 'POINT(41.874853 -87.656140)') #3 7UIC
+Waypoint.create(location: 'POINT(41.875540 -87.647181)') #4 8blue line
+Waypoint.create(location: 'POINT(41.871955 -87.647998)') #5 9student center
+Waypoint.create(location: 'POINT(41.884659 -87.647666)') #6 10Au Cheval
