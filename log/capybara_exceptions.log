@@ -29,3 +29,5 @@ D, [2017-02-25T16:45:37.098714 #67150] DEBUG -- : wrong number of arguments (1 f
 D, [2017-02-25T16:45:37.099275 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
 D, [2017-02-25T16:48:33.163366 #67150] DEBUG -- : wrong number of arguments (1 for 0)
 D, [2017-02-25T16:48:33.163910 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-26T12:43:45.356857 #70097] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-26T12:43:45.357651 #70097] DEBUG -- : ["app/controllers/waypoints_controller.rb:7:in `create'"]
