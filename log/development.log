@@ -3555,3 +3555,72 @@ them to actual class references.  For example:
   [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
   [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
   [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mMeander Load (0.5ms)[0m  [1m[34mSELECT  "meanders".* FROM "meanders" ORDER BY "meanders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (5.4ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mMeander Load (0.6ms)[0m  [1m[34mSELECT  "meanders".* FROM "meanders" ORDER BY "meanders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m

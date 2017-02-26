@@ -45,5 +45,5 @@ class Meander < ApplicationRecord
     number = path.length/2
     number.times { path.pop }
     path
-  endexit
+  end
 end
