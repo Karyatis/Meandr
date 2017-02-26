@@ -4009,3 +4009,204 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/PatrickJHoban/devbootcamp/phase3attempt1/wk8day7/Meandr/config/environment.rb:5)
+Started GET "/" for ::1 at 2017-02-26 17:17:56 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 418ms (Views: 408.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/waypoints" for ::1 at 2017-02-26 17:18:07 -0600
+Processing by WaypointsController#create as */*
+  Parameters: {"location"=>{"lat"=>"41.8761091", "lng"=>"-87.65307560000001"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (25.8ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044f02457ce1d2fc055e9cbfd99f433"], ["created_at", 2017-02-26 23:18:07 UTC], ["updated_at", 2017-02-26 23:18:07 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 85.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (1 for 0)):
+  
+app/controllers/waypoints_controller.rb:7:in `create'
+  Rendering /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.8ms)
+  Rendering /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.9ms)
+  Rendering /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (68.8ms)
+Started GET "/" for ::1 at 2017-02-26 17:18:55 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 89ms (Views: 85.7ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/PatrickJHoban/devbootcamp/phase3attempt1/wk8day7/Meandr/config/environment.rb:5)
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/PatrickJHoban/devbootcamp/phase3attempt1/wk8day7/Meandr/config/environment.rb:5)
+Started GET "/" for ::1 at 2017-02-26 17:30:16 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 93ms (Views: 90.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meanders" for ::1 at 2017-02-26 17:30:28 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/meanders"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/PatrickJHoban/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (23.0ms)
+Started GET "/" for ::1 at 2017-02-26 17:31:18 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 74ms (Views: 71.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 17:31:31 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"startLatitude"=>"41.8761155", "endLatitude"=>"41.902839"}
+No template found for MeandrsController#create, rendering head :no_content
+Completed 204 No Content in 70ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 17:39:10 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 91ms (Views: 88.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 17:39:20 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761012", "endLatitude"=>"41.902839"}}
+No template found for MeandrsController#create, rendering head :no_content
+Completed 204 No Content in 71ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 17:42:40 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 79ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 17:42:52 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761006", "endLatitude"=>"41.902839"}}
+No template found for MeandrsController#create, rendering head :no_content
+Completed 204 No Content in 78ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 17:44:03 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 90ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 17:44:15 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8760906", "startLongitude"=>"-87.6530576", "endLatitude"=>"41.902839", "endLongitude"=>"-87.70705809999998"}}
+No template found for MeandrsController#create, rendering head :no_content
+Completed 204 No Content in 80ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 17:52:29 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 80ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 17:52:59 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 17:53:27 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.876125099999996", "startLongitude"=>"-87.6530686", "endLatitude"=>"41.8755388", "endLongitude"=>"-87.64718110000001"}}
+No template found for MeandrsController#create, rendering head :no_content
+Completed 204 No Content in 114ms (ActiveRecord: 37.1ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 17:53:53 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 17:54:02 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.876137299999996", "startLongitude"=>"-87.6531164", "endLatitude"=>"41.91569439999999", "endLongitude"=>"-87.66482339999999"}}
+No template found for MeandrsController#create, rendering head :no_content
+Completed 204 No Content in 79ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 17:54:33 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 17:54:45 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761362", "startLongitude"=>"-87.6530672", "endLatitude"=>"41.8727933", "endLongitude"=>"-87.64786349999997"}}
+No template found for MeandrsController#create, rendering head :no_content
+Completed 204 No Content in 81ms (ActiveRecord: 0.0ms)
+
+

@@ -21,8 +21,19 @@ $(document).ready(function(){
     navigator.geolocation.getCurrentPosition(findLocation);
   });
   $("#find-route-button").on("click", function(){
-    var startPoint = $('')
-    // getWalkingRoute(startPoint, endPoint)
+    var startPointLat = $('#current-user-lat').html()
+    var startPointLng = $('#current-user-long').html()
+    var endPointLat = $('#desired-end-lat').html()
+    var endPointLng = $('#desired-end-long').html()
+    if (endPointLat == "end latitude") {
+      alert('Search for an endpoint')
+    } else {
+      // console.log(startPointLat);
+      // console.log(startPointLng);
+      // console.log(endPointLat);
+      // console.log(endPointLng);
+      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng);
+    }
   });
 });
 
@@ -113,20 +124,11 @@ function initMap(){
     }
 };
 
-function findStartAndEndPoints(pos) {
-  var crd = pos.coords;
-  var myLatLng = {lat: crd.latitude, lng: crd.longitude};
-  console.log(myLatLng);
-  console.log(position)
-  // return myLatLng;
-};
-
 function findLocation(pos) {
   var crd = pos.coords;
   var myLatLng = {lat: crd.latitude, lng: crd.longitude};
   saveLocation(myLatLng);
 };
-
 
 function saveLocation(myLatLng) {
   $.ajax({
@@ -143,16 +145,22 @@ function saveLocation(myLatLng) {
     })
 };
 
-
-function getWalkingRoute(start, end){
+function getWalkingRoute(startLat, startLng, endLat, endLng){
+  var meandr_info = {
+      startLatitude: startLat,
+      startLongitude: startLng,
+      endLatitude: endLat,
+      endLongitude: endLng
+    }
   $.ajax({
-    url: '/path/to/file',
-    type: 'default GET (Other values: POST)',
-    dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-    data: {param1: 'value1'},
+    url: '/meandrs',
+    type: 'post',
+    // dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+    data: { meandr: meandr_info },
     })
-    .done(function() { 
+    .done(function(response) { 
       console.log("success");
+      console.log(response);
     })
     .fail(function() { 
       console.log("error");
