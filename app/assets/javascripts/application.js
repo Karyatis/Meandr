@@ -21,17 +21,19 @@ $(document).ready(function(){
     navigator.geolocation.getCurrentPosition(findLocation);
   });
   $("#find-route-button").on("click", function(){
-    
+    // console.log(navigator.geolocation.getCurrentPosition(findStartLocation));
+    // console.log(startPoint);
+    // getWalkingRoute(startPoint, endPoint)
   });
 });
   // var potentialWaypoints = [];
   // var tempMarkerHolder = [];
 
 function initMap(){
-  var position = {lat: 11.8251, lng: 42.5903};
+  var defaultPosition = {lat: 11.8251, lng: 42.5903};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14, 
-    center: position
+    center: defaultPosition
   });
   // Create the search box and link it to the UI element.
   var input = document.getElementById('search-input');
@@ -62,6 +64,11 @@ function initMap(){
         console.log("Returned place contains no geometry");
         return;
       }
+      console.log(place);
+      console.log(place.geometry.location);
+      document.getElementById('end-location').innerHTML = place.geometry.location;
+      document.getElementById('desired-end-lat').innerHTML = place.geometry.location.lat();
+      document.getElementById('desired-end-long').innerHTML = place.geometry.location.lng();
       // Customized icons
       var icon = {
         url: place.icon,
@@ -77,7 +84,6 @@ function initMap(){
         title: place.name,
         position: place.geometry.location
       }));
-        console.log(position)
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -88,12 +94,16 @@ function initMap(){
     });
     map.fitBounds(bounds);
   });
-
+  // set variable for user start location before get current loc call
+  var startPosition;
   // Setting current location on map to user location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       var crd = position.coords;
       var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+      // Log starting user location on page in hidden div for use later
+      document.getElementById('current-user-lat').innerHTML = crd.latitude;
+      document.getElementById('current-user-long').innerHTML = crd.longitude;
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
@@ -104,6 +114,14 @@ function initMap(){
     } else { 
       alert('GeoLocation is not supported by your browser');
     }
+};
+
+function findStartAndEndPoints(pos) {
+  var crd = pos.coords;
+  var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+  console.log(myLatLng);
+  console.log(position)
+  // return myLatLng;
 };
 
 function findLocation(pos) {
@@ -127,6 +145,7 @@ function saveLocation(myLatLng) {
       console.log("error");
     })
 };
+
 
 function getWalkingRoute(start, end){
   $.ajax({
