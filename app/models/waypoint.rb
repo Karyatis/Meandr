@@ -22,14 +22,14 @@ class Waypoint < ApplicationRecord
   def coordinates
     self.location.coordinates
   end
-
+#doesn't need to exist anymore thanks to above
   def find_distance_to(destination)
     #change to call ^ distance on self instead of location
     self.distance(destination)
   end
 
   def search_radius(full_distance, modifier)
-    #set standard modifier to be 0.3
+    #set standard modifier to be 0.1
     radius = full_distance * modifier
   end
 

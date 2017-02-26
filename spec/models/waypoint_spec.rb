@@ -1,12 +1,12 @@
-require 'spec_helper'
+# require 'spec_helper'
 require 'rails_helper'
-require 'waypoint'
+# require 'waypoint'
 
-RSpec.describe Waypoint do
+  describe Waypoint do
 
   let(:dbc) { Waypoint.new(location: 'POINT(41.876460 -86.653224)') }
   it "has coordinates" do
-    expect(dbc.location.coordinates).to_equal [41.876460, -86.653224]
+    expect(dbc.location.coordinates).to eq [41.876460, -86.653224]
   end
 
 end
