@@ -21,13 +21,10 @@ $(document).ready(function(){
     navigator.geolocation.getCurrentPosition(findLocation);
   });
   $("#find-route-button").on("click", function(){
-    // console.log(navigator.geolocation.getCurrentPosition(findStartLocation));
-    // console.log(startPoint);
+    var startPoint = $('')
     // getWalkingRoute(startPoint, endPoint)
   });
 });
-  // var potentialWaypoints = [];
-  // var tempMarkerHolder = [];
 
 function initMap(){
   var defaultPosition = {lat: 11.8251, lng: 42.5903};
