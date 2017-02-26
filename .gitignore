@@ -11,8 +11,9 @@
 /tmp/
 /log/development.log
 log/development.log
+
 # Used by dotenv library to load environment variables.
-# .env
+.env
 
 ## Specific to RubyMotion:
 .dat*

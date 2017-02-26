@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  min-width: 200px;
+  width: 50%;
+  min-height: 200px;
+  height: 80%;
+  border: 1px solid blue;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/*
+.map-container  {
+  max-height: 1em;
+  max-width: 1em;
+}*/
