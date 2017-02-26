@@ -1025,3 +1025,256 @@ them to actual class references.  For example:
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044f13c81908e58c055e9735c182ecb"], ["created_at", 2017-02-26 02:32:30 UTC], ["updated_at", 2017-02-26 02:32:30 UTC]]
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
+  [1m[36mWaypoint Load (5.8ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.8ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (6.0ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "waypoints" WHERE "waypoints"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWaypoint Load (1.7ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (2.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (5038.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Meandr_development"[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (119.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Meandr_development"[0m
+  [1m[35m (120.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Meandr_test"[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2048389185964905210);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateWaypoints (20170225002251)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "waypoints" ("id" serial primary key, "location" geography(POINT,4326), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170225002251"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMeanders (20170226005304)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "meanders" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170226005304"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-26 03:55:21 UTC], ["updated_at", 2017-02-26 03:55:21 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2048389185964905210)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044f02f8bdec5f4c055e9ce3de6149c"], ["created_at", 2017-02-26 03:55:27 UTC], ["updated_at", 2017-02-26 03:55:27 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044f09752977c89c055e9706d506573"], ["created_at", 2017-02-26 03:55:27 UTC], ["updated_at", 2017-02-26 03:55:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044f035f8099179c055ea102ff8ec10"], ["created_at", 2017-02-26 03:55:27 UTC], ["updated_at", 2017-02-26 03:55:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044effb2edfe75cc055e9fe32a0663c"], ["created_at", 2017-02-26 03:55:27 UTC], ["updated_at", 2017-02-26 03:55:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044f011b1d92b80c055e96b69db65ed"], ["created_at", 2017-02-26 03:55:27 UTC], ["updated_at", 2017-02-26 03:55:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044ef9c38b04ab6c055e978cc9a77e6"], ["created_at", 2017-02-26 03:55:27 UTC], ["updated_at", 2017-02-26 03:55:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "0020000001000010e64044f13c81908e58c055e9735c182ecb"], ["created_at", 2017-02-26 03:55:28 UTC], ["updated_at", 2017-02-26 03:55:28 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
+  [1m[36mWaypoint Load (6.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" ORDER BY "waypoints"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "meanders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-02-26 03:57:03 UTC], ["updated_at", 2017-02-26 03:57:03 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWaypoint Load (2.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (2.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (1.0ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (2.5ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT  "waypoints".* FROM "waypoints" WHERE "waypoints"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWaypoint Load (0.8ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (1.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.8ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mWaypoint Load (0.8ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m

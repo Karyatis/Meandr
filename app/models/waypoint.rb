@@ -10,12 +10,22 @@ class Waypoint < ApplicationRecord
     return self.find_distance_to(destination) < current_waypoint.find_distance_to(destination)
   end
 
+  def distance(destination)
+    #thing.location.x // thing.location.y
+    x1 = location.x
+    x2 = destination.location.x
+    y1 = location.y
+    y2 = destination.location.y
+    Math.hypot(x2-x1,y2-y1)
+  end
+
   def coordinates
     self.location.coordinates
   end
 
   def find_distance_to(destination)
-    self.location.distance(destination.location)
+    #change to call ^ distance on self instead of location
+    self.distance(destination)
   end
 
   def search_radius(full_distance, modifier)
