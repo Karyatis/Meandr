@@ -17,8 +17,11 @@
 
 $(document).ready(function(){
   initMap();
-  $("#button").on("click", function(){
+  $("#add-waypoint-button").on("click", function(){
     navigator.geolocation.getCurrentPosition(findLocation);
+  });
+  $("#find-route-button").on("click", function(){
+    
   });
 });
   // var potentialWaypoints = [];
@@ -124,6 +127,24 @@ function saveLocation(myLatLng) {
       console.log("error");
     })
 };
+
+function getWalkingRoute(start, end){
+  $.ajax({
+    url: '/path/to/file',
+    type: 'default GET (Other values: POST)',
+    dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+    data: {param1: 'value1'},
+    })
+    .done(function() { 
+      console.log("success");
+    })
+    .fail(function() { 
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+}
 
   // // Declare all the variables we'll need to use.
   // var infowindow = null;
