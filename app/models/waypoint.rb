@@ -33,8 +33,26 @@ end
     next_waypoint = waypoints_nearer_destination.sample
   end
 
-  def meander(current_waypoint, destination)
-
-
+  def route_path(current_waypoint, destination, modifier)
+    # modifier = 0.3
+    points_of_interest = []
+    #will return nil if none were found
+    next_waypoint = choose_next_waypoint(current_waypoint, destination, modifier)
+    if next_waypoint == nil
+      if modifier < 1
+        modifier += 0.1
+        next_waypoint = route_path(current_waypoint, destination, modifier)
+      else
+        break
+        #stop adding points and route to destination
+      end
+    else
+      points_of_interest << next_waypoint
+      points_of_interest << route_path(next_waypoint, destination)
+    end
+    points_of_interest
     # add to aggregate array of coords/waypoints => return it
+  end
+  def meander(current_waypoint, destination)
+    route_path(current_waypoint, destination, 0.3)
   end
