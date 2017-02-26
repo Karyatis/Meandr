@@ -17,33 +17,20 @@ class Meander < ApplicationRecord
         modifier += 0.1
         next_waypoint = route_path(current_waypoint, destination, modifier, points_of_interest)
       else
-        # exit
-        # return
         return points_of_interest
         #stop adding points and route to destination
       end
     else
-      # p "what is about to get pushed into the array?"
-      # p next_waypoint
-      # p '*'*20
       points_of_interest << next_waypoint
-      # p "current points of interest array"
-      # p points_of_interest
-      # p '*'*20
       points_of_interest << route_path(next_waypoint, destination, 0.1, points_of_interest)
-      # p "poi after the recursive push"
-      # p points_of_interest
-      # p '*'*20
     end
-    # next_waypoint
-     # points_of_interest
     # add to aggregate array of coords/waypoints => return it
   end
 
   def meander(current_waypoint, destination)
     path = route_path(current_waypoint, destination, 0.1)
     number = path.length/2
-    number.times { path.pop }
+    (number + 1).times { path.pop }
     path
   end
 end
