@@ -13,3 +13,4 @@ deploy:
   app: meandr
   on:
     repo: Joel-B-Williams/Meandr
+cache: bundler
