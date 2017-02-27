@@ -4913,3 +4913,953 @@ Processing by MeandrsController#create as */*
 Completed 200 OK in 64ms (Views: 0.2ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for ::1 at 2017-02-26 19:49:16 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 82ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:09:32 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 84ms (Views: 80.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:09:41 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761103", "startLongitude"=>"-87.65306369999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 52ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:10:04 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 80ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:10:13 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761198", "startLongitude"=>"-87.6530623", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 49ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:12:16 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 72ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:12:24 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761054", "startLongitude"=>"-87.6530737", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 65ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:14:21 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 91ms (Views: 88.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:14:35 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.876114099999995", "startLongitude"=>"-87.6530853", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 52ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:15:17 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 81ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:15:25 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761243", "startLongitude"=>"-87.65308619999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 52ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:16:15 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 89ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:16:21 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761309", "startLongitude"=>"-87.65305599999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 63ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:16:43 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 85ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:16:52 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761206", "startLongitude"=>"-87.653027", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 83ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:17:55 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 88ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:18:12 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761425", "startLongitude"=>"-87.6530891", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 59ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:19:07 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 87ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:19:20 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761228", "startLongitude"=>"-87.653083", "endLatitude"=>"41.9392011", "endLongitude"=>"-87.7121421"}}
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:19:29 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 82ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:19:34 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8760872", "startLongitude"=>"-87.65307179999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:20:20 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 88ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:20:29 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8760921", "startLongitude"=>"-87.6530899", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:22:05 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 81ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:22:14 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761071", "startLongitude"=>"-87.65308449999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:24:37 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 89ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:24:45 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.876100199999996", "startLongitude"=>"-87.65306869999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 57ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:26:39 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 76ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:26:53 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761333", "startLongitude"=>"-87.65307469999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 51ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:27:57 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 103ms (Views: 100.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:28:07 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.876103", "startLongitude"=>"-87.65311179999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 48ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:31:50 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 79ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:31:58 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761179", "startLongitude"=>"-87.6530659", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 49ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:33:39 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 78ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:33:47 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.876132899999995", "startLongitude"=>"-87.6530695", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 46ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:35:21 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:35:28 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761175", "startLongitude"=>"-87.65308209999999", "endLatitude"=>"41.8846582", "endLongitude"=>"-87.64766680000002"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 53ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:36:34 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:36:49 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761357", "startLongitude"=>"-87.65310199999999", "endLatitude"=>"31.230416", "endLongitude"=>"121.473701"}}
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:36:59 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:37:09 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.876102499999995", "startLongitude"=>"-87.6530823", "endLatitude"=>"41.902839", "endLongitude"=>"-87.70705809999998"}}
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:37:55 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:38:01 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.8761197", "startLongitude"=>"-87.6530652", "endLatitude"=>"41.902839", "endLongitude"=>"-87.70705809999998"}}
+  [1m[36mWaypoint Load (0.4ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 31ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:39:32 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 47ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meandrs" for ::1 at 2017-02-26 20:39:45 -0600
+Processing by MeandrsController#create as */*
+  Parameters: {"meandr"=>{"startLatitude"=>"41.876123199999995", "startLongitude"=>"-87.65306559999999", "endLatitude"=>"35.6894875", "endLongitude"=>"139.69170639999993"}}
+  [1m[36mWaypoint Load (0.3ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-02-26 20:39:56 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
