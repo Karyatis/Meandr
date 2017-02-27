@@ -12,6 +12,9 @@ class Meander < ApplicationRecord
 
   def route_path(current_waypoint, destination, modifier, points_of_interest = [])
     next_waypoint = choose_next_waypoint(current_waypoint, destination, modifier)
+    if points_of_interest.length > 20
+      return points_of_interest
+    end
     if next_waypoint == nil
       if modifier < 1.0
         modifier += 0.1
