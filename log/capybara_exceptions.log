@@ -1,0 +1,43 @@
+# Logfile created on 2017-02-25 12:37:05 -0600 by logger.rb/47272
+D, [2017-02-25T15:20:00.233686 #66113] DEBUG -- : undefined method `POINT' for #<WaypointsController:0x007fbd31e0cd60>
+D, [2017-02-25T15:20:00.234296 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T15:21:59.480619 #66113] DEBUG -- : undefined method `POINT' for #<WaypointsController:0x007fbd31db0e48>
+D, [2017-02-25T15:21:59.481924 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T15:23:01.948008 #66113] DEBUG -- : undefined method `POINT' for #<WaypointsController:0x007fbd2e7c1990>
+D, [2017-02-25T15:23:01.948952 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T15:25:42.472952 #66113] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T15:25:42.473821 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:8:in `create'"]
+D, [2017-02-25T15:30:23.246668 #66113] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T15:30:23.247842 #66113] DEBUG -- : ["app/controllers/waypoints_controller.rb:8:in `create'"]
+D, [2017-02-25T16:01:47.899426 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:01:47.900443 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:37:54.644828 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:37:54.646162 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:38:47.460424 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:38:47.461829 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:41:02.291715 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:41:02.292926 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:41:18.018059 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:41:18.019360 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:41:36.354506 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:41:36.356003 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:43:02.917264 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:43:02.917736 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:43:09.275275 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:43:09.276134 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:45:37.098714 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:45:37.099275 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-25T16:48:33.163366 #67150] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-25T16:48:33.163910 #67150] DEBUG -- : ["app/controllers/waypoints_controller.rb:6:in `create'"]
+D, [2017-02-26T12:43:45.356857 #70097] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-26T12:43:45.357651 #70097] DEBUG -- : ["app/controllers/waypoints_controller.rb:7:in `create'"]
+D, [2017-02-26T12:58:13.338397 #70097] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-26T12:58:13.339166 #70097] DEBUG -- : ["app/controllers/waypoints_controller.rb:7:in `create'"]
+D, [2017-02-26T14:11:54.167406 #70097] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-26T14:11:54.167965 #70097] DEBUG -- : ["app/controllers/waypoints_controller.rb:7:in `create'"]
+D, [2017-02-26T15:08:50.405917 #71352] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-26T15:08:50.406514 #71352] DEBUG -- : ["app/controllers/waypoints_controller.rb:7:in `create'"]
+D, [2017-02-26T17:18:07.484984 #72644] DEBUG -- : wrong number of arguments (1 for 0)
+D, [2017-02-26T17:18:07.486663 #72644] DEBUG -- : ["app/controllers/waypoints_controller.rb:7:in `create'"]
+D, [2017-02-26T17:57:19.466341 #72644] DEBUG -- : undefined local variable or method `meander' for #<MeandrsController:0x007fd910aeee80>
+D, [2017-02-26T17:57:19.467407 #72644] DEBUG -- : ["app/controllers/meandrs_controller.rb:14:in `create'"]
