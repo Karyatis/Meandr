@@ -77,7 +77,7 @@ test:
 #
   production:
     adapter: postgis
-    url: <%= ENV["HEROKU_POSTGRESQL_YELLOW_URL"].sub(/^postgres/, "postgis") %>
+    url: <%= ENV["DATABASE_URL"].sub(/^postgres/, "postgis") %>
 #
 # production:
 #   <<: *default
