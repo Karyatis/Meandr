@@ -72,8 +72,8 @@ function initMap(){
         console.log("Returned place contains no geometry");
         return;
       }
-      console.log(place);
-      console.log(place.geometry.location);
+      // console.log(place);
+      // console.log(place.geometry.location);
       document.getElementById('end-location').innerHTML = place.geometry.location;
       document.getElementById('desired-end-lat').innerHTML = place.geometry.location.lat();
       document.getElementById('desired-end-long').innerHTML = place.geometry.location.lng();
@@ -159,16 +159,46 @@ function getWalkingRoute(startLat, startLng, endLat, endLng){
     data: { meandr: meandr_info },
     })
     .done(function(response) { 
-      console.log("success");
       console.log(response);
+      console.log(response.start);
+      debugger
+      console.log("success");
+      var startPoint = convertWaypoint(response.start);
+      console.log(startPoint);
+      var endPoint = convertWaypoint(response.end);
+      console.log(endPoint);
+      var convertedWaypoints = convertWaypoints(response.waypoints);
     })
     .fail(function() { 
       console.log("error");
     })
-    .always(function() {
-      console.log("complete");
-    });
 }
+
+function convertWaypoints(waypointArray){
+  var googleWaypoints = [];
+  for (var i=0; i<waypointArray.length; i++){
+    googleWaypoints.push(convertWaypoint(waypointArray[i]))
+  }
+  console.log(googleWaypoints);
+  return googleWaypoints;
+}
+
+function convertWaypoint(waypoint){
+  console.log(waypoint[0]);
+  return new google.maps.LatLng(waypoint[0], waypoint[1]);
+}
+
+// function getGoogleMap(){
+//   function initMap(){
+//     var directionsService = new google.maps.DirectionsService;
+//     var directionDisplay = new google.maps.DirectionsRenderer;
+//     var map = new google.maps.Map(document.getElementById('map');
+//   }
+
+// }
+
+
+
 
   // // Declare all the variables we'll need to use.
   // var infowindow = null;

@@ -39,3 +39,5 @@ D, [2017-02-26T15:08:50.405917 #71352] DEBUG -- : wrong number of arguments (1 f
 D, [2017-02-26T15:08:50.406514 #71352] DEBUG -- : ["app/controllers/waypoints_controller.rb:7:in `create'"]
 D, [2017-02-26T17:18:07.484984 #72644] DEBUG -- : wrong number of arguments (1 for 0)
 D, [2017-02-26T17:18:07.486663 #72644] DEBUG -- : ["app/controllers/waypoints_controller.rb:7:in `create'"]
+D, [2017-02-26T17:57:19.466341 #72644] DEBUG -- : undefined local variable or method `meander' for #<MeandrsController:0x007fd910aeee80>
+D, [2017-02-26T17:57:19.467407 #72644] DEBUG -- : ["app/controllers/meandrs_controller.rb:14:in `create'"]
