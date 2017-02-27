@@ -40,7 +40,7 @@ $(document).ready(function(){
 function initMap(){
   var defaultPosition = {lat: 11.8251, lng: 42.5903};
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14, 
+    zoom: 14,
     center: defaultPosition
   });
   // Create the search box and link it to the UI element.
@@ -119,7 +119,7 @@ function initMap(){
       });
       map.setCenter(myLatLng);
     });
-    } else { 
+    } else {
       alert('GeoLocation is not supported by your browser');
     }
 };
@@ -131,16 +131,18 @@ function findLocation(pos) {
 };
 
 function saveLocation(myLatLng) {
+
   $.ajax({
     url: '/waypoints',
-    method: 'post',    
+    method: 'post',
     data: {location: myLatLng},
     })
-    .done(function(response) { 
+    .done(function(response) {
       console.log("success");
       console.log(response);
+      $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
     })
-    .fail(function() { 
+    .fail(function() {
       console.log("error");
     })
 };
@@ -158,7 +160,7 @@ function getWalkingRoute(startLat, startLng, endLat, endLng){
     // dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
     data: { meandr: meandr_info },
     })
-    .done(function(response) { 
+    .done(function(response) {
       // console.log(response);
       // console.log(response.start);
       console.log("success");
@@ -170,7 +172,7 @@ function getWalkingRoute(startLat, startLng, endLat, endLng){
       getDirectionsMap(startPoint, endPoint, convertedWaypoints);
 
     })
-    .fail(function() { 
+    .fail(function() {
       console.log("error");
     })
 }
@@ -195,7 +197,7 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints){
   // var bounds = new google.maps.LatLngBounds();
   var map = new google.maps.Map(document.getElementById('map'));
   directionsDisplay.setMap(map);
-  
+
   // console.log(startPoint)
   // console.log(startPoint.geometry)
   // console.log(startPoint.geometry.location)
@@ -241,7 +243,7 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints){
   //   // Get the user's current position
   //   navigator.geolocation.getCurrentPosition(success, error);
   //   //console.log(pos.latitude + " " + pos.longitude);
-  //   } else { 
+  //   } else {
   //     alert('GeoLocation is not supported by your browser');
   //   }
    // End Geo Location (Note: this last close bracket may not be necessary )
