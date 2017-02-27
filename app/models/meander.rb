@@ -25,16 +25,13 @@ class Meander < ApplicationRecord
       end
     else
       points_of_interest << next_waypoint
-      points_of_interest << route_path(next_waypoint, destination, 0.1, points_of_interest)
+      route_path(next_waypoint, destination, 0.1, points_of_interest)
     end
     # add to aggregate array of coords/waypoints => return it
   end
 
   def meander(current_waypoint, destination)
-    path = route_path(current_waypoint, destination, 0.1)
-    number = path.length/2
-    (number + 1).times { path.pop }
-    path
+    route_path(current_waypoint, destination, 0.1).slice(0..-2)
   end
 
   def self.assemble_meander_coordinates(array_waypoints)

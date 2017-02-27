@@ -12,6 +12,8 @@
 /log/development.log
 log/development.log
 log/capybara_exceptions.log
+/log/capybara_exceptions.log
+/log/test.md
 
 # Used by dotenv library to load environment variables.
 .env
