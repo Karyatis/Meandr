@@ -4009,3 +4009,16 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
+  [1m[36mWaypoint Load (306.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints"[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "ExceptionNotification::Rack" => ExceptionNotification::Rack
+
+ (called from <top (required)> at /Users/apprentice/Desktop/meandr/Meandr/config/environment.rb:5)
