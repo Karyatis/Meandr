@@ -17,24 +17,90 @@
 
 $(document).ready(function(){
   initMap();
-  $("#button").on("click", function(){
+  $("#add-waypoint-button").on("click", function(){
     navigator.geolocation.getCurrentPosition(findLocation);
   });
+  $("#find-route-button").on("click", function(){
+    var startPoint = $('')
+    // getWalkingRoute(startPoint, endPoint)
+  });
 });
-  // var potentialWaypoints = [];
-  // var tempMarkerHolder = [];
 
 function initMap(){
-  var position = {lat: 11.8251, lng: 42.5903};
+  var defaultPosition = {lat: 11.8251, lng: 42.5903};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14, 
-    center: position
+    center: defaultPosition
   });
+  // Create the search box and link it to the UI element.
+  var input = document.getElementById('search-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function(){
+    searchBox.setBounds(map.getBounds());
+  });
+  var markers = [];
 
+  // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+    if (places.length == 0) {
+      return;
+    }
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      console.log(place);
+      console.log(place.geometry.location);
+      document.getElementById('end-location').innerHTML = place.geometry.location;
+      document.getElementById('desired-end-lat').innerHTML = place.geometry.location.lat();
+      document.getElementById('desired-end-long').innerHTML = place.geometry.location.lng();
+      // Customized icons
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        // icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+  });
+  // set variable for user start location before get current loc call
+  var startPosition;
+  // Setting current location on map to user location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       var crd = position.coords;
       var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+      // Log starting user location on page in hidden div for use later
+      document.getElementById('current-user-lat').innerHTML = crd.latitude;
+      document.getElementById('current-user-long').innerHTML = crd.longitude;
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
@@ -45,6 +111,14 @@ function initMap(){
     } else { 
       alert('GeoLocation is not supported by your browser');
     }
+};
+
+function findStartAndEndPoints(pos) {
+  var crd = pos.coords;
+  var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+  console.log(myLatLng);
+  console.log(position)
+  // return myLatLng;
 };
 
 function findLocation(pos) {
@@ -68,6 +142,25 @@ function saveLocation(myLatLng) {
       console.log("error");
     })
 };
+
+
+function getWalkingRoute(start, end){
+  $.ajax({
+    url: '/path/to/file',
+    type: 'default GET (Other values: POST)',
+    dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+    data: {param1: 'value1'},
+    })
+    .done(function() { 
+      console.log("success");
+    })
+    .fail(function() { 
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+}
 
   // // Declare all the variables we'll need to use.
   // var infowindow = null;
