@@ -76,7 +76,6 @@ test:
 # You can use this database configuration with:
 #
   production:
-    adapter: postgis
     url: <%= ENV["DATABASE_URL"].sub(/^postgres/, "postgis") %>
 #
 # production:
