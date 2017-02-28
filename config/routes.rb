@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   post 'waypoints' => 'waypoints#create'
 
-  resources :meandrs
+  resources :meanders
 
 end
