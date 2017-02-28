@@ -1,13 +1,13 @@
 class Meander < ApplicationRecord
   # has_many :waypoints
 
-  def choose_next_waypoint(current_waypoint, destination, modifier)
-    # find all waypoints within radius of current waypoint
-    waypoints_in_radius = Waypoint.waypoints_in_radius_of(current_waypoint, current_waypoint.search_radius(current_waypoint.find_distance_to(destination), modifier))
-    # select those that are closer to end point
-    waypoints_nearer_destination = waypoints_in_radius.select { |waypoint| waypoint.closer_to_end(current_waypoint, destination)}
-    # select one from ^ at random
-    next_waypoint = waypoints_nearer_destination.sample
+
+  def meander(current_waypoint, destination)
+    # 150 m min
+    min_search_radius = min_distance
+    # 800 m max
+    max_search_radius = max_distance
+    route_path(current_waypoint, destination, 0.1).slice(0..-2)
   end
 
   def route_path(current_waypoint, destination, modifier, points_of_interest = [])
@@ -30,9 +30,17 @@ class Meander < ApplicationRecord
     # add to aggregate array of coords/waypoints => return it
   end
 
-  def meander(current_waypoint, destination)
-    route_path(current_waypoint, destination, 0.1).slice(0..-2)
+  def choose_next_waypoint(current_waypoint, destination, modifier)
+    # find all waypoints within radius of current waypoint
+
+    waypoints_in_radius = Waypoint.waypoints_in_radius_of(current_waypoint, min_search_radius, max_search_radius)
+    # select those that are closer to end point
+    waypoints_nearer_destination = waypoints_in_radius.select { |waypoint| waypoint.closer_to_end(current_waypoint, destination)}
+    # select one from ^ at random
+    next_waypoint = waypoints_nearer_destination.sample
   end
+
+
 
   def self.assemble_meander_coordinates(array_waypoints)
     array_waypoints.map { |waypoint| waypoint.location.coordinates }

@@ -15,11 +15,11 @@ Waypoint.create(location: 'POINT(41.884659 -87.647666)') #6 10Au Cheval
 
 # What is this measure?  Distance used?
 # This is 1 mile.
-1000.times do
-  x = rand(41.86037366..41.88504033)
-  y = rand(-87.661557333..-87.64489066)
-  Waypoint.create(location: "POINT(#{x} #{y})")
-end
+# 100.times do
+#   x = rand(41.86037366..41.88504033)
+#   y = rand(-87.661557333..-87.64489066)
+#   Waypoint.create(location: "POINT(#{x} #{y})")
+# end
 # Test Walk from DBC to 648 W Randolph Street.
 # 4,215.71 ft
 
