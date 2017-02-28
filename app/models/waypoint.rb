@@ -19,6 +19,7 @@ class Waypoint < ApplicationRecord
     Waypoint.where(sql_query)
   end
 
+  # compares the two arrays and returns array of potential next waypoints in radius and closer to destination.
   def find_potential_next_waypoints(destination, min_search_radius, max_search_radius)
     waypoints_in_band = Waypoint.waypoints_in_radius_of(self, min_search_radius, max_search_radius)
     waypoints_closer = Waypoint.find_waypoints_closer_to_end(self, destination)
