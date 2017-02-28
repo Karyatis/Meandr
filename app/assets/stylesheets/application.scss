@@ -9,25 +9,72 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
+
+@import "*";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 #map {
   min-width: 200px;
-  width: 50%;
   min-height: 200px;
-  height: 80%;
-  border: 1px solid blue;
+  max-width: 1000px;
+  border: 1px solid #236476;
 }
-/* Optional: Makes the sample page fill the window. */
-html, body {
+
+.container-fluid {
+  max-width: 1000px;
+}
+/* Optional: Makes the sample page fill the window.
+*/html, body {
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.intro {
+  font-variant: small-caps;
+  font-size: 150%;
+  text-align: center;
+  font-weight: 900;
+}
+
+input {
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 5px;
+  border: solid 1px #383838 ;
+  transition: box-shadow 0.3s, border 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  color: #ccc;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+.btn-meandr {
+  float: right;
+  background-color: #7DAD3F;
+  color: #CFE0DA;
+}
+
+.btn-waypoint {
+  float: left;
+  background-color: #236476;
+  color: #CFE0DA;
+}
+
+#thanks {
+  align: left;
+  font-size: 90%;
 }
 /*
 .map-container  {
@@ -38,3 +85,4 @@ html, body {
 /*.hidden {
   display: none;
 }*/
+
