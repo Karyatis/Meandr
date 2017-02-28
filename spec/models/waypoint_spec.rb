@@ -17,8 +17,6 @@ describe Waypoint do
     expect(@dbc.location.coordinates).to eq [-87.653217, 41.876448]
   end
 
-
-
   describe "#waypoints_in_radius_of" do
     it "finds waypoints within search band" do
       expect(Waypoint.waypoints_in_radius_of(@dbc, 150, 500).length).to eq 2
@@ -41,10 +39,6 @@ describe Waypoint do
 
   describe "find_potential_next_waypoints" do
     it "returns the next possible waypoints" do
-      p '*' * 50
-      p Waypoint.count
-      p @dbc.find_potential_next_waypoints(@au_cheval, 150, 800)
-      p '*' * 50
       expect(@dbc.find_potential_next_waypoints(@au_cheval, 150, 800)).to eq [@dugans, @blue_line]
     end
 
