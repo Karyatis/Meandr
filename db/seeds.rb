@@ -19,6 +19,7 @@ Waypoint.create(location: 'POINT(-87.648000 41.871955)') #5 9UIC student center
 
 Waypoint.create(location: 'POINT(-87.647670 41.884654)') #6 10Au Cheval
 
+
 # What is this measure?  Distance used?
 # This is 1 mile.
 
@@ -61,6 +62,7 @@ end
 #   y = rand(-87.64358633650001.. -87.6269196635)
 #   Waypoint.create(location: "POINT(#{y} #{x}")
 # end
+
 # Test Walk from DBC to 648 W Randolph Street.
 # 4,215.71 ft
 

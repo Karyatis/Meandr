@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
@@ -19,7 +20,6 @@ $(document).ready(function(){
   initMap();
   $("#add-waypoint-button").on("click", function(){
     navigator.geolocation.getCurrentPosition(findLocation);
-  });
 });
 
 function initMap(){
@@ -192,6 +192,7 @@ function convertWaypoint(waypoint){
 
 function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay){
   var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
   directionsService.route({
     origin: startPoint,
     destination: endPoint,

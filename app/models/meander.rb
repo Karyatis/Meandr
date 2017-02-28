@@ -28,8 +28,8 @@ class Meander < ApplicationRecord
     # p "chooses next waypoint"
     # p next_waypoint
     if points_of_interest.length > 20
-      p "*"*100
-      p points_of_interest
+      # p "*"*100
+      # p points_of_interest
       return points_of_interest
     end
     if next_waypoint == nil
