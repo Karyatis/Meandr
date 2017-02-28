@@ -208,10 +208,10 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directi
 }
 
 function clearMarkers(markers){
-   markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
+ markers.forEach(function(marker) {
+    marker.setMap(null);
+  });
+  markers = [];
 }
 
 
