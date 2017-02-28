@@ -1,5 +1,6 @@
 Meandr was developed by Dev Bootcamp students for their final project. The team included:
 
+
 Joel Williams
 
 @Joel-B-Williams
