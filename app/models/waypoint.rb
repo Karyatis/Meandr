@@ -1,7 +1,7 @@
 class Waypoint < ApplicationRecord
     # has_many :meanders
 
-
+  # Returns points in our circular search band
   def self.waypoints_in_radius_of(current_waypoint, min_search_radius, max_search_radius) 
     #point, distance
     waypoint_text = current_waypoint.location.as_text
@@ -10,10 +10,7 @@ class Waypoint < ApplicationRecord
     Waypoint.where(sql_query)
   end
 
-  def closer_to_end(current_waypoint, destination)
-    return self.find_distance_to(destination) < current_waypoint.find_distance_to(destination)
-  end
-
+  # Returns points closer to the endpoint
   def self.find_waypoints_closer_to_end(current_waypoint, destination)
     # #thing.location.x // thing.location.y
     # x1 = location.x
@@ -27,6 +24,20 @@ class Waypoint < ApplicationRecord
     sql_query = "ST_DistanceSphere(location, ST_GeomFromText('#{destination_text}')) < ST_DistanceSphere(ST_GeomFromText('#{current_text}'), ST_GeomFromText('#{destination_text}'))"
     Waypoint.where(sql_query)
   end
+
+  def find_potential_next_waypoints(destination, min_search_radius, max_search_radius)
+    waypoints_in_band = Waypoint.waypoints_in_radius_of(self, min_search_radius, max_search_radius)
+    waypoints_closer = Waypoint.find_waypoints_closer_to_end(self, destination)
+    p waypoints_in_band
+    p waypoints_closer
+    
+  end
+
+
+  def closer_to_end(current_waypoint, destination)
+    return self.find_distance_to(destination) < current_waypoint.find_distance_to(destination)
+  end
+
 
 # set default modifier to 0.1 in variable?
   def search_radius(full_distance, modifier)
