@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
@@ -212,7 +213,6 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints){
     travelMode: 'WALKING'
   }, function(response, status){
     if (status === 'OK') {
-      debugger
       directionsDisplay.setDirections(response);
       var routes = response.routes[0];
       console.log(response);
