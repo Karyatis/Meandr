@@ -20,21 +20,6 @@ $(document).ready(function(){
   $("#add-waypoint-button").on("click", function(){
     navigator.geolocation.getCurrentPosition(findLocation);
   });
-  // $("#find-route-button").on("click", function(){
-  //   var startPointLat = $('#current-user-lat').html()
-  //   var startPointLng = $('#current-user-long').html()
-  //   var endPointLat = $('#desired-end-lat').html()
-  //   var endPointLng = $('#desired-end-long').html()
-  //   if (endPointLat == "end latitude") {
-  //     alert('Search for an endpoint')
-  //   } else {
-  //     // console.log(startPointLat);
-  //     // console.log(startPointLng);
-  //     // console.log(endPointLat);
-  //     // console.log(endPointLng);
-  //     getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng);
-  //   }
-  // });
 });
 
 function initMap(){
@@ -55,21 +40,32 @@ function initMap(){
   var directionsDisplay = new google.maps.DirectionsRenderer;
   directionsDisplay.setMap(map);
   // Listen for click of Meandr button
-  $("#find-route-button").on("click", function(){
-    // get rid of original markers
-    clearMarkers(markers);
-    var startPointLat = $('#current-user-lat').html()
-    var startPointLng = $('#current-user-long').html()
-    var endPointLat = $('#desired-end-lat').html()
-    var endPointLng = $('#desired-end-long').html()
-    // CONSOLE LOGS ===================================================
-    if (endPointLat == "end latitude") {
-      alert('Search for an endpoint')
-    } else {
-      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map, directionsDisplay);
-    }
-  });
+  clickMeanderButton(markers, directionsDisplay);
   // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
+  setEndPoint(markers, searchBox, map);
+  // set variable for user start location before get current loc call
+  var startPosition;
+  // Setting current location on map to user location
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){
+      var crd = position.coords;
+      var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+      // Log starting user location on page in hidden div for use later
+      document.getElementById('current-user-lat').innerHTML = crd.latitude;
+      document.getElementById('current-user-long').innerHTML = crd.longitude;
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Meanderer'
+      });
+      map.setCenter(myLatLng);
+    });
+  } else {
+    alert('GeoLocation is not supported by your browser');
+  }
+};
+
+function setEndPoint(markers, searchBox, map){
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
     if (places.length == 0) {
@@ -113,30 +109,23 @@ function initMap(){
     });
     map.fitBounds(bounds);
   });
-  // set variable for user start location before get current loc call
-  var startPosition;
-  // Setting current location on map to user location
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position){
-      var crd = position.coords;
-      var myLatLng = {lat: crd.latitude, lng: crd.longitude};
-      // Log starting user location on page in hidden div for use later
-      document.getElementById('current-user-lat').innerHTML = crd.latitude;
-      document.getElementById('current-user-long').innerHTML = crd.longitude;
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Meanderer'
-      });
-      map.setCenter(myLatLng);
-    });
-  } else {
-    alert('GeoLocation is not supported by your browser');
-  }
-};
-
-
-
+}
+function clickMeanderButton(markers, directionsDisplay){
+  $("#find-route-button").on("click", function(){
+  // get rid of original markers
+  clearMarkers(markers);
+  var startPointLat = $('#current-user-lat').html()
+  var startPointLng = $('#current-user-long').html()
+  var endPointLat = $('#desired-end-lat').html()
+  var endPointLng = $('#desired-end-long').html()
+  if (endPointLat == "end latitude") {
+    alert('Search for an endpoint')
+    }
+    else {
+      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map, directionsDisplay);
+    }
+  });
+}
 function findLocation(pos) {
   var crd = pos.coords;
   var myLatLng = {lat: crd.latitude, lng: crd.longitude};
@@ -144,7 +133,6 @@ function findLocation(pos) {
 };
 
 function saveLocation(myLatLng) {
-
   $.ajax({
     url: '/waypoints',
     method: 'post',
