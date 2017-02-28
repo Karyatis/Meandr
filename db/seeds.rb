@@ -19,15 +19,15 @@ Waypoint.create(location: 'POINT(-87.648000 41.871955)') #5 9UIC student center
 
 Waypoint.create(location: 'POINT(-87.647670 41.884654)') #6 10Au Cheval
 
-<<<<<<< HEAD
 # What is this measure?  Distance used?
 # This is 1 mile.
 
 #centered on DBC give or take
 #41.876452, -87.653214
-10000.times do
-  x = rand( 41.85471286956522..41.89819113043478)
-  y = rand(-87.68068652747253..-87.62574147252748)
+
+1000.times do
+  x = rand(41.86037366..41.88504033)
+  y = rand(-87.661557333..-87.64489066)
   Waypoint.create(location: "POINT(#{y} #{x})")
 end
 
@@ -62,23 +62,7 @@ end
 #   y = rand(-87.64358633650001.. -87.6269196635)
 #   Waypoint.create(location: "POINT(#{y} #{x}")
 # end
-=======
-# Distance used:
-  # This is 1 mile.
 
-1000.times do
-  x = rand(41.86037366..41.88504033)
-  y = rand(-87.661557333..-87.64489066)
-  Waypoint.create(location: "POINT(#{y} #{x})")
-end
-
-# 1000.times do
-#   x = rand(41.86037366..41.88504033)
-#   y = rand(-87.661557333..-87.64489066)
-#   Waypoint.create(location: "POINT(#{x} #{y})")
-# end
-
->>>>>>> master
 # Test Walk from DBC to 648 W Randolph Street.
 # 4,215.71 ft
 

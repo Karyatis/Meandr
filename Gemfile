@@ -43,6 +43,8 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara-rails'
+  gem 'jasmine'
+  
 end
 
 group :development do
