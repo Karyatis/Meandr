@@ -21,8 +21,12 @@
 #map {
   min-width: 200px;
   min-height: 200px;
-  height: 80%;
+  max-width: 1000px;
   border: 1px solid #236476;
+}
+
+.container-fluid {
+  max-width: 1000px;
 }
 /* Optional: Makes the sample page fill the window.
 */html, body {
@@ -37,6 +41,18 @@
   font-size: 150%;
   text-align: center;
 }
+
+input {
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 5px;
+  border: solid 1px #383838 ;
+  transition: box-shadow 0.3s, border 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  color: #ccc;
+}
+
 .btn-meandr {
   float: right;
   background-color: #7DAD3F;
