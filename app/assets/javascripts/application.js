@@ -16,7 +16,6 @@
 //= require_tree .
 
 $(document).ready(function(){
-  console.log('hello')
   initMap();
   $("#add-waypoint-button").on("click", function(){
     navigator.geolocation.getCurrentPosition(findLocation);
@@ -53,20 +52,21 @@ function initMap(){
     searchBox.setBounds(map.getBounds());
   });
   var markers = [];
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  directionsDisplay.setMap(map);
   // Listen for click of Meandr button
-    $("#find-route-button").on("click", function(){
+  $("#find-route-button").on("click", function(){
+    // get rid of original markers
+    clearMarkers(markers);
     var startPointLat = $('#current-user-lat').html()
     var startPointLng = $('#current-user-long').html()
     var endPointLat = $('#desired-end-lat').html()
     var endPointLng = $('#desired-end-long').html()
+    // CONSOLE LOGS ===================================================
     if (endPointLat == "end latitude") {
       alert('Search for an endpoint')
     } else {
-      // console.log(startPointLat);
-      // console.log(startPointLng);
-      // console.log(endPointLat);
-      // console.log(endPointLng);
-      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map);
+      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map, directionsDisplay);
     }
   });
   // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
@@ -76,10 +76,7 @@ function initMap(){
       return;
     }
     // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
+    clearMarkers(markers);
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
@@ -88,8 +85,6 @@ function initMap(){
         console.log("Returned place contains no geometry");
         return;
       }
-      console.log(place);
-      console.log(place.geometry.location);
       document.getElementById('end-location').innerHTML = place.geometry.location;
       document.getElementById('desired-end-lat').innerHTML = place.geometry.location.lat();
       document.getElementById('desired-end-long').innerHTML = place.geometry.location.lng();
@@ -165,7 +160,7 @@ function saveLocation(myLatLng) {
     })
 };
 
-function getWalkingRoute(startLat, startLng, endLat, endLng, map){
+function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisplay){
   var meandr_info = {
       startLatitude: startLat,
       startLongitude: startLng,
@@ -179,15 +174,10 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map){
     data: { meandr: meandr_info },
     })
     .done(function(response) {
-      // console.log(response);
-      // console.log(response.start);
-      console.log("success");
       var startPoint = convertWaypoint(response.start);
-      // console.log(startPoint);
       var endPoint = convertWaypoint(response.end);
-      // console.log(endPoint);
       var convertedWaypoints = convertWaypoints(response.waypoints);
-      getDirectionsMap(startPoint, endPoint, convertedWaypoints, map);
+      getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
 
     })
     .fail(function() {
@@ -200,30 +190,15 @@ function convertWaypoints(waypointArray){
   for (var i=0; i<waypointArray.length; i++){
     googleWaypoints.push({location: convertWaypoint(waypointArray[i]), stopover: false})
   }
-  // console.log(googleWaypoints);
   return googleWaypoints;
 }
 
 function convertWaypoint(waypoint){
-  // console.log(waypoint[0]);
   return new google.maps.LatLng(waypoint[0], waypoint[1]);
 }
 
-// SET MAP VARIABLE TO PASS IN EXISTING MAP ========================================
-function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map){
+function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay){
   var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay = new google.maps.DirectionsRenderer;
-  // var bounds = new google.maps.LatLngBounds();
-  // var map = new google.maps.Map(document.getElementById('map'));
-  directionsDisplay.setMap(map);
-
-  // console.log(startPoint)
-  // console.log(startPoint.geometry)
-  // console.log(startPoint.geometry.location)
-  // debugger
-  // bounds.extend(startPoint)
-  // bounds.extend(endPoint)
-
   directionsService.route({
     origin: startPoint,
     destination: endPoint,
@@ -231,17 +206,20 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map){
     travelMode: 'WALKING'
   }, function(response, status){
     if (status === 'OK') {
-      debugger
       directionsDisplay.setDirections(response);
-      var routes = response.routes[0];
-      console.log(response);
-      console.log(routes);
+      // var routes = response.routes[0];
     } else {
       window.alert('Directions request failed due to ' + status);
     }
   })
 }
 
+function clearMarkers(markers){
+   markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+}
 
 
 
