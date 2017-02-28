@@ -21,21 +21,21 @@ $(document).ready(function(){
   $("#add-waypoint-button").on("click", function(){
     navigator.geolocation.getCurrentPosition(findLocation);
   });
-  $("#find-route-button").on("click", function(){
-    var startPointLat = $('#current-user-lat').html()
-    var startPointLng = $('#current-user-long').html()
-    var endPointLat = $('#desired-end-lat').html()
-    var endPointLng = $('#desired-end-long').html()
-    if (endPointLat == "end latitude") {
-      alert('Search for an endpoint')
-    } else {
-      // console.log(startPointLat);
-      // console.log(startPointLng);
-      // console.log(endPointLat);
-      // console.log(endPointLng);
-      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng);
-    }
-  });
+  // $("#find-route-button").on("click", function(){
+  //   var startPointLat = $('#current-user-lat').html()
+  //   var startPointLng = $('#current-user-long').html()
+  //   var endPointLat = $('#desired-end-lat').html()
+  //   var endPointLng = $('#desired-end-long').html()
+  //   if (endPointLat == "end latitude") {
+  //     alert('Search for an endpoint')
+  //   } else {
+  //     // console.log(startPointLat);
+  //     // console.log(startPointLng);
+  //     // console.log(endPointLat);
+  //     // console.log(endPointLng);
+  //     getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng);
+  //   }
+  // });
 });
 
 function initMap(){
@@ -53,7 +53,22 @@ function initMap(){
     searchBox.setBounds(map.getBounds());
   });
   var markers = [];
-
+  // Listen for click of Meandr button
+    $("#find-route-button").on("click", function(){
+    var startPointLat = $('#current-user-lat').html()
+    var startPointLng = $('#current-user-long').html()
+    var endPointLat = $('#desired-end-lat').html()
+    var endPointLng = $('#desired-end-long').html()
+    if (endPointLat == "end latitude") {
+      alert('Search for an endpoint')
+    } else {
+      // console.log(startPointLat);
+      // console.log(startPointLng);
+      // console.log(endPointLat);
+      // console.log(endPointLng);
+      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map);
+    }
+  });
   // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
@@ -120,10 +135,12 @@ function initMap(){
       });
       map.setCenter(myLatLng);
     });
-    } else {
-      alert('GeoLocation is not supported by your browser');
-    }
+  } else {
+    alert('GeoLocation is not supported by your browser');
+  }
 };
+
+
 
 function findLocation(pos) {
   var crd = pos.coords;
@@ -148,7 +165,7 @@ function saveLocation(myLatLng) {
     })
 };
 
-function getWalkingRoute(startLat, startLng, endLat, endLng){
+function getWalkingRoute(startLat, startLng, endLat, endLng, map){
   var meandr_info = {
       startLatitude: startLat,
       startLongitude: startLng,
@@ -170,7 +187,7 @@ function getWalkingRoute(startLat, startLng, endLat, endLng){
       var endPoint = convertWaypoint(response.end);
       // console.log(endPoint);
       var convertedWaypoints = convertWaypoints(response.waypoints);
-      getDirectionsMap(startPoint, endPoint, convertedWaypoints);
+      getDirectionsMap(startPoint, endPoint, convertedWaypoints, map);
 
     })
     .fail(function() {
@@ -192,11 +209,12 @@ function convertWaypoint(waypoint){
   return new google.maps.LatLng(waypoint[0], waypoint[1]);
 }
 
-function getDirectionsMap(startPoint, endPoint, convertedWaypoints){
+// SET MAP VARIABLE TO PASS IN EXISTING MAP ========================================
+function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map){
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
   // var bounds = new google.maps.LatLngBounds();
-  var map = new google.maps.Map(document.getElementById('map'));
+  // var map = new google.maps.Map(document.getElementById('map'));
   directionsDisplay.setMap(map);
 
   // console.log(startPoint)
