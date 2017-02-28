@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-  console.log('hello')
+  // console.log('hello')
   initMap();
   $("#add-waypoint-button").on("click", function(){
     navigator.geolocation.getCurrentPosition(findLocation);

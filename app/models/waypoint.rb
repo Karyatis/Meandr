@@ -37,13 +37,32 @@ class Waypoint < ApplicationRecord
     waypoint_options = (waypoints_in_band & waypoints_closer)
   end
 
+
+end
+  # PATRICK"S PERSONAL MISSION>>>>
+  # "ST_Distance(ST_GeomFromText('#{current_text}'), ST_GeomFromText('#{destination_text}'))"
+  # .where() must be type boolean
+  # .find() looks for id
+  # .query() undefined method query
+  # .select() returns array
+  # def find_distance_to_end(destination)
+  #   current_text = self.location.as_text
+  #   p "cur location"
+  #   p current_text
+  #   destination_text = destination.location.as_text
+  #   p "des location"
+  #   p destination_text
+  #   sql_query = "ST_Distance_Sphere(ST_GeomFromText('#{current_text}'), ST_GeomFromText('#{destination_text}'))"
+  #   distance = Waypoint.where(sql_query)
+  #   p "Distance"
+  #   p distance
+  # end
+
   # set default modifier to 0.1 in variable?
   # def search_radius(full_distance, modifier)
   #   #set standard modifier to be 0.1
   #   radius = full_distance * modifier
   # end
-
-end
 
   # def initial_distance(destination)
   #   # latitude_midpoint = (self.location.x + destination.location.x)/2.0
@@ -63,10 +82,3 @@ end
   #   m_per_deg_lon = 111132.954 * cos( latMid );
   # end
 
-  # PATRICK"S PERSONAL MISSION>>>>
-  # def find_distance_to_end(destination)
-  #   current_text = location.as_text
-  #   destination_text = destination.location.as_text
-  #   sql_query = "ST_Distance_Sphere(location ST_GeomFromText('#{current_text}'), location ST_GeomFromText('#{destination_text}'))"
-  #   Waypoint.where(sql_query)
-  # end
