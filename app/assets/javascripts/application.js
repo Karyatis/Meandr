@@ -46,23 +46,7 @@ function initMap(){
   // set variable for user start location before get current loc call
   var startPosition;
   // Setting current location on map to user location
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position){
-      var crd = position.coords;
-      var myLatLng = {lat: crd.latitude, lng: crd.longitude};
-      // Log starting user location on page in hidden div for use later
-      document.getElementById('current-user-lat').innerHTML = crd.latitude;
-      document.getElementById('current-user-long').innerHTML = crd.longitude;
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Meanderer'
-      });
-      map.setCenter(myLatLng);
-    });
-  } else {
-    alert('GeoLocation is not supported by your browser');
-  }
+  setStartLocation(map);
 };
 
 function setEndPoint(markers, searchBox, map){
@@ -126,11 +110,32 @@ function clickMeanderButton(markers, directionsDisplay){
     }
   });
 }
+
 function findLocation(pos) {
   var crd = pos.coords;
   var myLatLng = {lat: crd.latitude, lng: crd.longitude};
   saveLocation(myLatLng);
 };
+
+function setStartLocation(map){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){
+      var crd = position.coords;
+      var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+      // Log starting user location on page in hidden div for use later
+      document.getElementById('current-user-lat').innerHTML = crd.latitude;
+      document.getElementById('current-user-long').innerHTML = crd.longitude;
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Meanderer'
+      });
+      map.setCenter(myLatLng);
+    });
+  } else {
+    alert('GeoLocation is not supported by your browser');
+  }
+}
 
 function saveLocation(myLatLng) {
   $.ajax({
