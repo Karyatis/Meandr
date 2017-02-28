@@ -29,10 +29,6 @@ $(document).ready(function(){
     if (endPointLat == "end latitude") {
       alert('Search for an endpoint')
     } else {
-      // console.log(startPointLat);
-      // console.log(startPointLng);
-      // console.log(endPointLat);
-      // console.log(endPointLng);
       getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng);
     }
   });
@@ -198,6 +194,8 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints){
   // var bounds = new google.maps.LatLngBounds();
   var map = new google.maps.Map(document.getElementById('map'));
   directionsDisplay.setMap(map);
+
+
 
   // console.log(startPoint)
   // console.log(startPoint.geometry)
