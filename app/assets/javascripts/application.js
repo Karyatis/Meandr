@@ -213,7 +213,6 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints){
     travelMode: 'WALKING'
   }, function(response, status){
     if (status === 'OK') {
-      debugger
       directionsDisplay.setDirections(response);
       var routes = response.routes[0];
       console.log(response);

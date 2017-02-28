@@ -13,18 +13,45 @@
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
+
+@import "*";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 #map {
   min-width: 200px;
-  width: 50%;
   min-height: 200px;
   height: 80%;
-  border: 1px solid blue;
+  border: 1px solid #236476;
 }
-/* Optional: Makes the sample page fill the window. */
-html, body {
+/* Optional: Makes the sample page fill the window.
+*/html, body {
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.intro {
+  font-variant: small-caps;
+  font-size: 150%;
+  text-align: center;
+}
+.btn-meandr {
+  float: right;
+  background-color: #7DAD3F;
+  color: #CFE0DA;
+}
+
+.btn-waypoint {
+  float: left;
+  background-color: #236476;
+  color: #CFE0DA;
+}
+
+#thanks {
+  align: left;
+  font-size: 90%;
 }
 /*
 .map-container  {
@@ -36,6 +63,3 @@ html, body {
   display: none;
 }*/
 
-@import "*";
-@import "bootstrap-sprockets";
-@import "bootstrap";
