@@ -105,7 +105,11 @@ function clickMeanderButton(markers, directionsDisplay){
   var endPointLat = $('#desired-end-lat').html()
   var endPointLng = $('#desired-end-long').html()
   if (endPointLat == "end latitude") {
-    alert('Search for an endpoint')
+    $('#error').show();
+    $('#error').html('<b>We all love to wander aimlessly...</b><br><b>... but sadly in this instance we could really use a destination.');
+      setTimeout(function() {
+          $('#error').fadeOut('slow');
+          }, 5000);
     }
     else {
       getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map, directionsDisplay);
@@ -138,7 +142,9 @@ function setStartLocation(map){
     });
   } else {
 
-    alert('GeoLocation is not supported by your browser');
+    // Is this something google api provides?
+    $('#error').html("<b>GeoLocation is not supported by your browser<b>");
+    // alert('GeoLocation is not supported by your browser');
   }
 }
 
@@ -151,6 +157,7 @@ function saveLocation(myLatLng) {
     .done(function(response) {
       console.log("success");
       console.log(response);
+      $("#thanks").show();
       $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
         setTimeout(function() {
             $('#thanks').fadeOut('slow');
@@ -187,6 +194,7 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
       }
       else {
         console.log(response.alert);
+        $('#error').show();
         $('#error').html('<b>' + response.alert + '</b>');
         setTimeout(function() {
             $('#error').fadeOut('fast');
