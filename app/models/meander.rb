@@ -93,7 +93,7 @@ class Meander < ApplicationRecord
 
     a = (Math::sin(dlat/2)**2) + Math::cos(rlat1) * Math::cos(rlat2) * (Math::sin(dlon/2)**2)
     c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
-    p d = r * c
+    d = r * c
   end
 
   def self.assemble_meander_coordinates(array_waypoints)
