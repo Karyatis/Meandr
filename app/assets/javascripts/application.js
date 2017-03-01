@@ -44,11 +44,12 @@ function initMap(){
   // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
   setEndPoint(markers, searchBox, map);
   // set variable for user start location before get current loc call
-  var startPosition;
+  var startPosition = document.getElementById('current-user-lat').innerHTML;
   // Setting current location on map to user location
-  setStartLocation(map);
+  setStartLocation(startPosition, map, markers);
 };
 
+// Sets an endpoint based on what a user enters in the search box on the map.
 function setEndPoint(markers, searchBox, map){
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
@@ -56,13 +57,13 @@ function setEndPoint(markers, searchBox, map){
       return;
     }
     // Clear out the old markers.
-    clearMarkers(markers);
+    // clearMarkers(markers);
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
       if (!place.geometry) {
-        console.log("Returned place contains no geometry");
+        // console.log("Returned place contains no geometry");
         return;
       }
       document.getElementById('end-location').innerHTML = place.geometry.location;
@@ -97,19 +98,26 @@ function setEndPoint(markers, searchBox, map){
 
 function clickAddWaypointButton(){
   $("#add-waypoint-button").on('click', function(){
+  var startPointLat = $('#current-user-lat').html();
+  // var startPointLng = $('#current-user-long').html();
+  if (startPointLat == 'start latitude'){
+      $('#error').show();
+      $('#error').html("<b>Please turn on your location services and let us know where you're at so we can help get you on your way!</b><br>");
+      setTimeout(function() {
+        $('#error').fadeOut('slow');
+      }, 5000);
+  } else {
     $.ajax({
       url: '/waypoints/new',
-      // type: 'default GET (Other values: POST)',
-      // dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-      // data: {param1: 'value1'},
     })
     .done(function(response) {
       $('#waypoint-form').html(response)
     })
+    }
   })
 }
 
-// WILL CHANGE TO HAPPENING ON FORM SUBMIT ======================
+// ERROR MESSAGES FOR WAYPOINT BUTTON BELOW GO IN THIS FUNCTION
 function submitWaypointForm(){
   $('.container-fluid').on('submit', '#waypoint-form form', function(e){
     e.preventDefault();
@@ -119,6 +127,14 @@ function submitWaypointForm(){
     var dropper = $('input[id= "dropper"]').val()
     var description = $('input[id= "description"]').val()
     var location = navigator.geolocation.getCurrentPosition(saveWaypoint);
+    if (location == undefined){
+      $('#waypoint-form').html('');
+      $("#error").show();
+      $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported and location access is allowed.</b>");
+      setTimeout(function() {
+        $('#error').fadeOut('slow');
+      }, 5000);
+    }
 
   function saveWaypoint(pos) {
     var crd = pos.coords;
@@ -134,13 +150,36 @@ function submitWaypointForm(){
       type: method,
       data: data,
     })
-    .done(function() {
-      console.log("poop");
+    .done(function(response) {
+    if (response.status == 200) {
+      $("#thanks").show();
+      $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
+      setTimeout(function() {
+        $('#thanks').fadeOut('slow');
+      }, 5000);
+    } else {
+      $("#error").show();
+      $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported and location access is allowed.</b>");
+      setTimeout(function() {
+        $('#error').fadeOut('slow');
+        }, 5000);
+      }
+    })
+    .fail(function(response) {
+    $("#error").show();
+    $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported.</b>");
+      setTimeout(function() {
+        $('#error').fadeOut('slow');
+      }, 5000);
+    })
+    .always(function(){
+            console.log("saveWaypoint .always")
       $('#waypoint-form').html('');
     })
   };
   })
 }
+
 
 function clickMeanderButton(markers, directionsDisplay){
   $("#find-route-button").on("click", function(){
@@ -149,8 +188,12 @@ function clickMeanderButton(markers, directionsDisplay){
   var startPointLng = $('#current-user-long').html()
   var endPointLat = $('#desired-end-lat').html()
   var endPointLng = $('#desired-end-long').html()
-  if (endPointLat == "end latitude") {
-    alert('Search for an endpoint')
+  if (endPointLat == "end latitude" || endPointLng == "end longitude") {
+    $('#error').show();
+    $('#error').html('<b>We all love to wander aimlessly...</b><br><b>... but sadly in this instance we could really use a destination.');
+      setTimeout(function() {
+          $('#error').fadeOut('slow');
+          }, 5000);
     }
     else {
       getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map, directionsDisplay);
@@ -158,42 +201,98 @@ function clickMeanderButton(markers, directionsDisplay){
   });
 }
 
-
-// function saveLocation(myLatLng) {
-//   $.ajax({
-//     url: '/waypoints',
-//     method: 'post',
-//     data: {location: myLatLng},
-//     })
-//     .done(function(response) {
-//       // console.log("success");
-//       // console.log(response);
-//       $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
-//     })
-//     .fail(function() {
-//       console.log("error");
-//     })
-// };
-
-function setStartLocation(map){
+function setStartLocation(startPosition, map, markers){
+  var startPosition = startPosition
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       var crd = position.coords;
       var myLatLng = {lat: crd.latitude, lng: crd.longitude};
-      // Log starting user location on page in hidden div for use later
+      // var startPosition;
       document.getElementById('current-user-lat').innerHTML = crd.latitude;
       document.getElementById('current-user-long').innerHTML = crd.longitude;
+      var startPosition = $('#current-user-lat').html();
+      // console.log(startPosition);
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
         title: 'Meanderer'
       });
+      markers.push(marker);
       map.setCenter(myLatLng);
     });
   } else {
-    alert('GeoLocation is not supported by your browser');
+    $('#error').show()
+    $('#error').html("<b>GeoLocation is not supported by your browser<b>");
   }
 }
+
+
+// Goal is to provide error message to user if location services not enabled.
+// function checkUserLocationProvided(startPosition){
+//   // Added error message handling to check if user location services are enabled.
+//   // var startPointLat = $('#current-user-lat').html();
+//   // var startPointLng = $('#current-user-long').html();
+//   console.log(startPosition);
+//   // console.log(startPointLng);
+
+//   if (startPosition == 'start latitude'){
+//     $('#error').show();
+//     $('#error').html("<b>Please turn on your location services and let us know where you're at so we can help get you on your way!</b><br>");
+//   } else {
+//     console.log('hello');
+//   }
+// }
+
+// // Sets up listener out of the document ready call
+// function clickAddWaypointButton(map){
+//   $("#add-waypoint-button").on("click", function(){
+//     navigator.geolocation.getCurrentPosition(findLocation);
+//   });
+// }
+
+// =======================================================================================
+// // Find location is called when user clicks the add waypoint button.
+// function findLocation(pos) {
+//   var crd = pos.coords;
+//   var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+//   saveLocation(myLatLng);
+// };
+
+// Save location is called by findLocation following user clicking add waypoint.
+// function saveLocation(myLatLng) {
+//   $.ajax({
+//     url: '/waypoints',
+//     method: 'post',
+//     data: {location: myLatLng},
+//   })
+//   .done(function(response) {
+//     console.log("success");
+//     console.log(response);
+//     if (response.status == 200) {
+//       $("#thanks").show();
+//       $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
+//       setTimeout(function() {
+//           $('#thanks').fadeOut('slow');
+//           }, 5000);
+//     } else {
+//       $("#error").show();
+//       $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported and location access is allowed.</b>");
+//       setTimeout(function() {
+//           $('#error').fadeOut('slow');
+//           }, 5000);
+//     }
+//   })
+//   .fail(function(response) {
+//     console.log("error");
+//     console.log(response.alert);
+//     $("#error").show();
+//     $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported.</b>");
+//       setTimeout(function() {
+//           $('#error').fadeOut('slow');
+//           }, 5000);
+//   })
+// };
+
 
 function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisplay){
   var meandr_info = {
@@ -207,17 +306,32 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
     type: 'post',
     // dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
     data: { meandr: meandr_info },
-    })
-    .done(function(response) {
+  })
+  .done(function(response) {
+    // console.log(response)
+    // console.log(response.alert)
+    if (response.status == 200) {
       var startPoint = convertWaypoint(response.start);
       var endPoint = convertWaypoint(response.end);
       var convertedWaypoints = convertWaypoints(response.waypoints);
       getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
-
-    })
-    .fail(function() {
-      console.log("error");
-    })
+    }
+    else {
+      // console.log(response.alert);
+      $('#error').show();
+      $('#error').html('<b>' + response.alert + '</b>');
+      setTimeout(function() {
+          $('#error').fadeOut('fast');
+          }, 5000);
+    }
+  })
+  .fail(function(response) {
+    $('#error').show();
+    $('#error').html("<b>Sorry, something went awry there.<b><br><b>Give it another try?<b>");
+      setTimeout(function() {
+          $('#error').fadeOut('fast');
+          }, 5000);
+  })
 }
 
 function convertWaypoints(waypointArray){
@@ -244,7 +358,11 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directi
       directionsDisplay.setDirections(response);
       // var routes = response.routes[0];
     } else {
-      window.alert('Directions request failed due to ' + status);
+      $('#error').show();
+      $('#error').html('<b>Directions request failed due to ' + status + '</b>');
+      setTimeout(function() {
+        $('#error').fadeOut('fast');
+        }, 5000);
     }
   })
 }
@@ -255,31 +373,6 @@ function clearMarkers(markers){
   });
   markers = [];
 }
-
-
-
-  // // Declare all the variables we'll need to use.
-  // var infowindow = null;
-  // var userCoords;
-
-  //Start the GeoLocation
-  // if (navigator.geolocation) {
-  //   function error(err){
-  //     console.warn('ERROR(' + err.code + '): ' + err.message);
-  //   }
-  //   // on success we assign coordinates to usercords variable
-  //   function success(pos) {
-  //     userCoords = pos.coords;
-  //   }
-
-  //   // Get the user's current position
-  //   navigator.geolocation.getCurrentPosition(success, error);
-  //   //console.log(pos.latitude + " " + pos.longitude);
-  //   } else {
-  //     alert('GeoLocation is not supported by your browser');
-  //   }
-   // End Geo Location (Note: this last close bracket may not be necessary )
-
 
   // // Map Options
   // var mapOptions = {

@@ -1,30 +1,27 @@
-# README
+Meandr was developed by Dev Bootcamp students for their final project. The team included:
 
-# Meandr!
-# Anna
-# Patrick
-# Hesham
-# Joel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Joel Williams
 
-Things you may want to cover:
+@Joel-B-Williams
 
-* Ruby version
 
-* System dependencies
+Anna Pougas
 
-* Configuration
+@karyatis
 
-* Database creation
 
-* Database initialization
+Patrick Hoban
 
-* How to run the test suite
+@PatrickJamesHoban
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+Hesham Elrehaimy
 
-* ...
+@Hesham-Elrehaimy
+
+
+Meandr will generate a route based on user-contributed waypoints.
+
+To use this app, visit https://meandr.herokuapp.com/ on your phone. Happy wandering!
+

@@ -1,7 +1,6 @@
 class Meander < ApplicationRecord
   # has_many :waypoints
 
-
   def meander(current_waypoint, destination)
     # 150 m min
     min_search_radius = 150
@@ -14,6 +13,9 @@ class Meander < ApplicationRecord
   end
 
   def route_path(current_waypoint, destination, distance_to_end, min_search_radius, max_search_radius, points_of_interest = [])
+    if distance_to_end > 160000
+
+    end
     # p "*"*60
     # p "calls function"
     # p "here are our variables"
