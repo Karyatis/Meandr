@@ -104,23 +104,46 @@ function clickAddWaypointButton(){
       // data: {param1: 'value1'},
     })
     .done(function(response) {
-      console.log("poop");
-      console.log(response);
+      $('#waypoint-form').html(response)
     })
   })
 }
 
 // WILL CHANGE TO HAPPENING ON FORM SUBMIT ======================
 function submitWaypointForm(){
-  // change here to listen to form submission
-  // $("#add-waypoint-button").on("click", function(){
-  //   navigator.geolocation.getCurrentPosition(findLocation);
-  // });
+  $('.container-fluid').on('submit', '#waypoint-form form', function(e){
+    e.preventDefault();
+    var $form = $(this);
+    var url = $form.attr('action');
+    var method = $form.attr('method');
+    var dropper = $('input[id= "dropper"]').val()
+    var description = $('input[id= "description"]').val()
+    var location = navigator.geolocation.getCurrentPosition(saveWaypoint);
+
+  function saveWaypoint(pos) {
+    var crd = pos.coords;
+    var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+    var data = {
+      dropper: dropper,
+      description: description,
+      lat: crd.latitude,
+      lng: crd.longitude
+    };
+    $.ajax({
+      url: url,
+      type: method,
+      data: data,
+    })
+    .done(function() {
+      console.log("poop");
+      $('#waypoint-form').html('');
+    })
+  };
+  })
 }
 
 function clickMeanderButton(markers, directionsDisplay){
   $("#find-route-button").on("click", function(){
-  // get rid of original markers
   clearMarkers(markers);
   var startPointLat = $('#current-user-lat').html()
   var startPointLng = $('#current-user-long').html()
@@ -135,27 +158,22 @@ function clickMeanderButton(markers, directionsDisplay){
   });
 }
 
-function findLocation(pos) {
-  var crd = pos.coords;
-  var myLatLng = {lat: crd.latitude, lng: crd.longitude};
-  saveLocation(myLatLng);
-};
 
-function saveLocation(myLatLng) {
-  $.ajax({
-    url: '/waypoints',
-    method: 'post',
-    data: {location: myLatLng},
-    })
-    .done(function(response) {
-      // console.log("success");
-      // console.log(response);
-      $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
-    })
-    .fail(function() {
-      console.log("error");
-    })
-};
+// function saveLocation(myLatLng) {
+//   $.ajax({
+//     url: '/waypoints',
+//     method: 'post',
+//     data: {location: myLatLng},
+//     })
+//     .done(function(response) {
+//       // console.log("success");
+//       // console.log(response);
+//       $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
+//     })
+//     .fail(function() {
+//       console.log("error");
+//     })
+// };
 
 function setStartLocation(map){
   if (navigator.geolocation) {

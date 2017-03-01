@@ -8,11 +8,14 @@ class WaypointsController < ApplicationController
     end
   end
   def create
+    p "*"*100
+    p params
     # also needs desc/dropped_by values
-    @waypoint = Waypoint.new(location: "POINT(#{params[:location][:lng]}) #{params[:location][:lat]} ")
-    if @waypoint.save
+    waypoint = Waypoint.new(location: "POINT(#{params[:lng]}) #{params[:lat]} ", description: params[:description], dropped_by: params[:dropper])
+    if waypoint.save
       if request.xhr?
         #this is where the message gets sent
+        "hallo!"
       end
     else
       status 404
