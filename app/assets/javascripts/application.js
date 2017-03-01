@@ -252,7 +252,7 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
   })
   .fail(function(response) {
     $('#error').show();
-    $('#error').html("<b>Sorry, something went awry there.<b><br><b>Give it another try?<b>");
+    $('#error').html("<b>Sorry, something went wrong there.<b><br><b>Give it another try?<b>");
       setTimeout(function() {
           $('#error').fadeOut('fast');
           }, 5000);
