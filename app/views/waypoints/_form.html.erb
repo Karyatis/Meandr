@@ -1,0 +1,5 @@
+<%= form_for waypoint do |f| %>
+  <%= f.text_field :dropped_by, placeholder: 'Tell us who you are', class: 'text', id: 'dropper' %>
+  <%= f.text_field :description, placeholder: 'Tell us what you see', class: 'text', id: 'description' %>
+  <%= f.submit 'Save Waypoint' %>
+<% end %>
