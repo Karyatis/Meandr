@@ -48,7 +48,7 @@ function initMap(){
   // set variable for user start location before get current loc call
   var startPosition;
   // Setting current location on map to user location
-  setStartLocation(map);
+  setStartLocation(map, markers);
 };
 
 function setEndPoint(markers, searchBox, map){
@@ -58,7 +58,7 @@ function setEndPoint(markers, searchBox, map){
       return;
     }
     // Clear out the old markers.
-    clearMarkers(markers);
+    // clearMarkers(markers);
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
@@ -96,6 +96,7 @@ function setEndPoint(markers, searchBox, map){
     map.fitBounds(bounds);
   });
 }
+
 function clickMeanderButton(markers, directionsDisplay){
   $("#find-route-button").on("click", function(){
   // get rid of original markers
@@ -125,7 +126,7 @@ function findLocation(pos) {
   saveLocation(myLatLng);
 };
 
-function setStartLocation(map){
+function setStartLocation(map, markers){
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       var crd = position.coords;
@@ -138,6 +139,8 @@ function setStartLocation(map){
         map: map,
         title: 'Meanderer'
       });
+      markers.push(marker);
+      // clear markers array on meander
       map.setCenter(myLatLng);
     });
   } else {
@@ -148,6 +151,12 @@ function setStartLocation(map){
   }
 }
 
+function findLocation(pos) {
+  var crd = pos.coords;
+  var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+  saveLocation(myLatLng);
+};
+// =======================================================================================
 function saveLocation(myLatLng) {
   $.ajax({
     url: '/waypoints',
