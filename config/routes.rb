@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   post 'waypoints' => 'waypoints#create'
-
+  get 'waypoints/new' => 'waypoints#new'
   resources :meandrs
 
 end

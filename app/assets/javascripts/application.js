@@ -18,9 +18,8 @@
 
 $(document).ready(function(){
   initMap();
-  $("#add-waypoint-button").on("click", function(){
-    navigator.geolocation.getCurrentPosition(findLocation);
-  });
+  submitWaypointForm();
+  clickAddWaypointButton();
 });
 
 function initMap(){
@@ -95,6 +94,30 @@ function setEndPoint(markers, searchBox, map){
     map.fitBounds(bounds);
   });
 }
+
+function clickAddWaypointButton(){
+  $("#add-waypoint-button").on('click', function(){
+    $.ajax({
+      url: '/waypoints/new',
+      // type: 'default GET (Other values: POST)',
+      // dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+      // data: {param1: 'value1'},
+    })
+    .done(function(response) {
+      console.log("poop");
+      console.log(response);
+    })
+  })
+}
+
+// WILL CHANGE TO HAPPENING ON FORM SUBMIT ======================
+function submitWaypointForm(){
+  // change here to listen to form submission
+  // $("#add-waypoint-button").on("click", function(){
+  //   navigator.geolocation.getCurrentPosition(findLocation);
+  // });
+}
+
 function clickMeanderButton(markers, directionsDisplay){
   $("#find-route-button").on("click", function(){
   // get rid of original markers
@@ -118,6 +141,22 @@ function findLocation(pos) {
   saveLocation(myLatLng);
 };
 
+function saveLocation(myLatLng) {
+  $.ajax({
+    url: '/waypoints',
+    method: 'post',
+    data: {location: myLatLng},
+    })
+    .done(function(response) {
+      // console.log("success");
+      // console.log(response);
+      $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
+    })
+    .fail(function() {
+      console.log("error");
+    })
+};
+
 function setStartLocation(map){
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
@@ -137,22 +176,6 @@ function setStartLocation(map){
     alert('GeoLocation is not supported by your browser');
   }
 }
-
-function saveLocation(myLatLng) {
-  $.ajax({
-    url: '/waypoints',
-    method: 'post',
-    data: {location: myLatLng},
-    })
-    .done(function(response) {
-      console.log("success");
-      console.log(response);
-      $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
-    })
-    .fail(function() {
-      console.log("error");
-    })
-};
 
 function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisplay){
   var meandr_info = {
