@@ -46,8 +46,7 @@ function initMap(){
   var startPosition = document.getElementById('current-user-lat').innerHTML;
   console.log(startPosition);
   // Setting current location on map to user location
-  setStartLocation(startPosition, map);
-
+  setStartLocation(startPosition, map, markers);
 };
 
 // Sets an endpoint based on what a user enters in the search box on the map.
@@ -58,7 +57,7 @@ function setEndPoint(markers, searchBox, map){
       return;
     }
     // Clear out the old markers.
-    clearMarkers(markers);
+    // clearMarkers(markers);
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
@@ -118,10 +117,12 @@ function clickMeanderButton(markers, directionsDisplay){
   });
 }
 
-function setStartLocation(startPosition, map){
+
+function setStartLocation(startPosition, map, markers){
   // Still reach this point even if location has been blocked.
   // console.log('HERE IN SET START');
   var startPosition = startPosition
+
   if (navigator.geolocation) {
     // Still reach this point even if location has been blocked.
     // console.log('INSIDE GEOLOCATION');
@@ -145,6 +146,8 @@ function setStartLocation(startPosition, map){
         title: 'Meanderer'
       });
       // console.log(map);
+      markers.push(marker);
+      // clear markers array on meander
       map.setCenter(myLatLng);
     });
   } else {
@@ -182,6 +185,7 @@ function clickAddWaypointButton(map){
   });
 }
 
+// =======================================================================================
 // Find location is called when user clicks the add waypoint button.
 function findLocation(pos) {
   var crd = pos.coords;
