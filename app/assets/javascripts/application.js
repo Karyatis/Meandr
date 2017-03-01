@@ -123,14 +123,14 @@ function submitWaypointForm(){
     var dropper = $('input[id= "dropper"]').val()
     var description = $('input[id= "description"]').val()
     var location = navigator.geolocation.getCurrentPosition(saveWaypoint);
-    if (location == undefined){
-      $('#waypoint-form').html('');
-      $("#error").show();
-      $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported and location access is allowed.</b>");
-      setTimeout(function() {
-        $('#error').fadeOut('slow');
-      }, 5000);
-    }
+    // if (location == undefined){
+    //   $('#waypoint-form').html('');
+    //   $("#error").show();
+    //   $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported and location access is allowed.</b>");
+    //   setTimeout(function() {
+    //     $('#error').fadeOut('slow');
+    //   }, 5000);
+    // }
 
   function saveWaypoint(pos) {
     var crd = pos.coords;
@@ -169,7 +169,7 @@ function submitWaypointForm(){
       }, 5000);
     })
     .always(function(){
-            console.log("saveWaypoint .always")
+      console.log("saveWaypoint .always")
       $('#waypoint-form').html('');
     })
   };
