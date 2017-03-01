@@ -19,6 +19,7 @@
 $(document).ready(function(){
   initMap();
   $("#add-waypoint-button").on("click", function(){
+    console.log('click')
     navigator.geolocation.getCurrentPosition(findLocation);
   });
 });
@@ -115,6 +116,8 @@ function clickMeanderButton(markers, directionsDisplay){
 function findLocation(pos) {
   var crd = pos.coords;
   var myLatLng = {lat: crd.latitude, lng: crd.longitude};
+  console.log('findlocation');
+  console.log(myLatLng);
   saveLocation(myLatLng);
 };
 
@@ -134,6 +137,7 @@ function setStartLocation(map){
       map.setCenter(myLatLng);
     });
   } else {
+
     alert('GeoLocation is not supported by your browser');
   }
 }
@@ -148,9 +152,14 @@ function saveLocation(myLatLng) {
       console.log("success");
       console.log(response);
       $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
+        setTimeout(function() {
+            $('#thanks').fadeOut('slow');
+            }, 5000);
     })
-    .fail(function() {
+    .fail(function(response) {
       console.log("error");
+      console.log(response.alert);
+      alert('Unable to save location, please ensure GeoLocation is supported.')
     })
 };
 
@@ -168,14 +177,27 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
     data: { meandr: meandr_info },
     })
     .done(function(response) {
-      var startPoint = convertWaypoint(response.start);
-      var endPoint = convertWaypoint(response.end);
-      var convertedWaypoints = convertWaypoints(response.waypoints);
-      getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
-
+      console.log(response)
+      console.log(response.alert)
+      if (response.status == 200) {
+        var startPoint = convertWaypoint(response.start);
+        var endPoint = convertWaypoint(response.end);
+        var convertedWaypoints = convertWaypoints(response.waypoints);
+        getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
+      }
+      else {
+        console.log(response.alert);
+        $('#error').html('<b>' + response.alert + '</b>');
+        setTimeout(function() {
+            $('#error').fadeOut('fast');
+            }, 5000);
+      }
     })
-    .fail(function() {
-      console.log("error");
+    .fail(function(response) {
+      $('#error').html("<b>Sorry, something went awry there.<b><br><b>Give it another try?<b>");
+        setTimeout(function() {
+            $('#error').fadeOut('fast');
+            }, 5000);
     })
 }
 
