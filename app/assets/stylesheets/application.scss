@@ -20,8 +20,10 @@
 
 #map {
   min-width: 200px;
-  min-height: 200px;
+  min-height: 325px;
   max-width: 1000px;
+  // height: 100%;
+  // width: 100%;
   border: 1px solid #236476;
 }
 
@@ -76,11 +78,14 @@ hr {
   align: left;
   font-size: 90%;
 }
-/*
-.map-container  {
-  max-height: 1em;
-  max-width: 1em;
-}*/
+
+// .map-container  {
+//   // max-height: 100%;
+//   // max-width: 100%;
+//   min-width: 200px;
+//   min-height: 325px;
+//   max-width: 1000px;
+// }
 
 /*.hidden {
   display: none;
