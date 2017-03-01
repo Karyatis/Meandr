@@ -23,9 +23,9 @@ $(document).ready(function(){
 });
 
 function initMap(){
-  var defaultPosition = {lat: 11.8251, lng: 42.5903};
+  var defaultPosition = {lat: 40.5843, lng: -96.3084};
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
+    zoom: 3,
     center: defaultPosition
   });
   // Create the search box and link it to the UI element.
@@ -56,14 +56,10 @@ function setEndPoint(markers, searchBox, map){
     if (places.length == 0) {
       return;
     }
-    // Clear out the old markers.
-    // clearMarkers(markers);
-
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
       if (!place.geometry) {
-        // console.log("Returned place contains no geometry");
         return;
       }
       document.getElementById('end-location').innerHTML = place.geometry.location;
@@ -117,7 +113,7 @@ function clickAddWaypointButton(){
   })
 }
 
-// ERROR MESSAGES FOR WAYPOINT BUTTON BELOW GO IN THIS FUNCTION
+
 function submitWaypointForm(){
   $('.container-fluid').on('submit', '#waypoint-form form', function(e){
     e.preventDefault();
@@ -219,80 +215,13 @@ function setStartLocation(startPosition, map, markers){
       });
       markers.push(marker);
       map.setCenter(myLatLng);
+      map.setZoom(14)
     });
   } else {
     $('#error').show()
     $('#error').html("<b>GeoLocation is not supported by your browser<b>");
   }
 }
-
-
-// Goal is to provide error message to user if location services not enabled.
-// function checkUserLocationProvided(startPosition){
-//   // Added error message handling to check if user location services are enabled.
-//   // var startPointLat = $('#current-user-lat').html();
-//   // var startPointLng = $('#current-user-long').html();
-//   console.log(startPosition);
-//   // console.log(startPointLng);
-
-//   if (startPosition == 'start latitude'){
-//     $('#error').show();
-//     $('#error').html("<b>Please turn on your location services and let us know where you're at so we can help get you on your way!</b><br>");
-//   } else {
-//     console.log('hello');
-//   }
-// }
-
-// // Sets up listener out of the document ready call
-// function clickAddWaypointButton(map){
-//   $("#add-waypoint-button").on("click", function(){
-//     navigator.geolocation.getCurrentPosition(findLocation);
-//   });
-// }
-
-// =======================================================================================
-// // Find location is called when user clicks the add waypoint button.
-// function findLocation(pos) {
-//   var crd = pos.coords;
-//   var myLatLng = {lat: crd.latitude, lng: crd.longitude};
-//   saveLocation(myLatLng);
-// };
-
-// Save location is called by findLocation following user clicking add waypoint.
-// function saveLocation(myLatLng) {
-//   $.ajax({
-//     url: '/waypoints',
-//     method: 'post',
-//     data: {location: myLatLng},
-//   })
-//   .done(function(response) {
-//     console.log("success");
-//     console.log(response);
-//     if (response.status == 200) {
-//       $("#thanks").show();
-//       $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
-//       setTimeout(function() {
-//           $('#thanks').fadeOut('slow');
-//           }, 5000);
-//     } else {
-//       $("#error").show();
-//       $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported and location access is allowed.</b>");
-//       setTimeout(function() {
-//           $('#error').fadeOut('slow');
-//           }, 5000);
-//     }
-//   })
-//   .fail(function(response) {
-//     console.log("error");
-//     console.log(response.alert);
-//     $("#error").show();
-//     $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported.</b>");
-//       setTimeout(function() {
-//           $('#error').fadeOut('slow');
-//           }, 5000);
-//   })
-// };
-
 
 function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisplay){
   var meandr_info = {
@@ -304,12 +233,9 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
   $.ajax({
     url: '/meandrs',
     type: 'post',
-    // dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
     data: { meandr: meandr_info },
   })
   .done(function(response) {
-    // console.log(response)
-    // console.log(response.alert)
     if (response.status == 200) {
       var startPoint = convertWaypoint(response.start);
       var endPoint = convertWaypoint(response.end);
@@ -317,7 +243,6 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
       getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
     }
     else {
-      // console.log(response.alert);
       $('#error').show();
       $('#error').html('<b>' + response.alert + '</b>');
       setTimeout(function() {
@@ -374,43 +299,4 @@ function clearMarkers(markers){
   markers = [];
 }
 
-  // // Map Options
-  // var mapOptions = {
-  //   zoom: 14,
-  //   center: userCoords
-  // }
 
-  // // Add info window when user hovers over point on map
-  // infoWindow = new google.maps.InfoWindow({
-  //   content: "holding..."
-  // });
-
-  // // Fire up google maps and place inside the map-canvas div
-  // map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-
-// TUTORIALS:
-// https://www.youtube.com/watch?v=Hv76o8PEKwk
-// https://www.youtube.com/watch?v=W0juXNFLd6w
-
-//Add listener
-// google.maps.event.addListener(marker, "click", function (event) {
-//     var latitude = event.latLng.lat();
-//     var longitude = event.latLng.lng();
-//     console.log( latitude + ', ' + longitude );
-
-//     radius = new google.maps.Circle({map: map,
-//         radius: 100,
-//         center: event.latLng,
-//         fillColor: '#777',
-//         fillOpacity: 0.1,
-//         strokeColor: '#AA0000',
-//         strokeOpacity: 0.8,
-//         strokeWeight: 2,
-//         draggable: true,    // Dragable
-//         editable: true      // Resizable
-//     });
-
-//     // Center of map
-//     map.panTo(new google.maps.LatLng(latitude,longitude));
-// }); //end addListener
