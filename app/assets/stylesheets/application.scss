@@ -60,6 +60,14 @@ hr {
   background: #333;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
+
+input[type=submit]{
+  background: #236476;
+}
+input[type=submit]:active {
+  background: #7DAD3F;
+}
+
 .btn-meandr {
   float: right;
   background-color: #7DAD3F;
@@ -72,13 +80,23 @@ hr {
   color: #CFE0DA;
 }
 
+.btn-meandr:focus, .btn-meandr-success:focus {
+  color: #CFE0DA;
+}
+
+.btn-waypoint:focus, .btn-waypoint-success:focus {
+  color: #CFE0DA;
+}
+
 #thanks {
   align: left;
+  text-align: center;
   font-size: 90%;
 }
 
 #error {
   align: left;
+  text-align: center;
   font-size: 90%;
   color: red;
 }

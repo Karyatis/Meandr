@@ -98,7 +98,7 @@ function clickAddWaypointButton(){
   // var startPointLng = $('#current-user-long').html();
   if (startPointLat == 'start latitude'){
       $('#error').show();
-      $('#error').html("<b>Please turn on your location services and let us know where you're at so we can help get you on your way!</b><br>");
+      $('#error').html("<b>Please turn on your devices's location services so we can get you on your way!</b><br>");
       setTimeout(function() {
         $('#error').fadeOut('slow');
       }, 5000);
@@ -147,7 +147,7 @@ function submitWaypointForm(){
       }, 5000);
     } else {
       $("#error").show();
-      $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported and location access is allowed.</b>");
+      $("#error").html("<b>We were unable to save your location, please ensure location services are allowed.</b>");
       setTimeout(function() {
         $('#error').fadeOut('slow');
         }, 5000);
@@ -155,7 +155,7 @@ function submitWaypointForm(){
     })
     .fail(function(response) {
     $("#error").show();
-    $("#error").html("<b>We were unable to save your location, please ensure GeoLocation is supported.</b>");
+    $("#error").html("<b>We were unable to save your location, please ensure location services are allowed.</b>");
       setTimeout(function() {
         $('#error').fadeOut('slow');
       }, 5000);
@@ -177,7 +177,7 @@ function clickMeanderButton(markers, directionsDisplay){
   var endPointLng = $('#desired-end-long').html()
   if (endPointLat == "end latitude" || endPointLng == "end longitude") {
     $('#error').show();
-    $('#error').html('<b>We all love to wander aimlessly...</b><br><b>... but sadly in this instance we could really use a destination.');
+    $('#error').html('<b>We all love to wander aimlessly... but we could really use a destination.');
       setTimeout(function() {
           $('#error').fadeOut('slow');
           }, 5000);
@@ -245,8 +245,8 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
     $('#error').show();
     $('#error').html("<b>Sorry, something went wrong there.<b><br><b>Give it another try?<b>");
       setTimeout(function() {
-          $('#error').fadeOut('fast');
-          }, 5000);
+        $('#error').fadeOut('fast');
+      }, 5000);
   })
 }
 
