@@ -27,13 +27,13 @@ describe Meander do
 
   describe "#choose_next_waypoint" do
     it "returns a possible next waypoint" do
-      expect(@meander.choose_next_waypoint(@dbc, @au_cheval, 150, 800)).to be_an_instance_of Waypoint
+      expect(@meander.choose_next_waypoint(@dbc, @au_cheval)).to be_an_instance_of Waypoint
     end
   end
 
   describe "#route_path" do
     it "returns an array of possible next waypoints" do
-      expect(@meander.route_path(@dbc, @au_cheval, 1022.6561812623268, 150, 800)).to all(be_an_instance_of Waypoint)
+      expect(@meander.route_path(@dbc, @au_cheval, 1022.6561812623268)).to all(be_an_instance_of Waypoint)
     end
   end
 
