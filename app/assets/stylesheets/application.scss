@@ -68,6 +68,10 @@ input[type=submit]:active {
   background: #7DAD3F;
 }
 
+input, select, text_field{
+  color: black;
+}
+
 .btn-meandr {
   float: right;
   background-color: #7DAD3F;
@@ -95,23 +99,7 @@ input[type=submit]:active {
   font-size: 90%;
 }
 
-// #gif iframe{
-//   display: block;
-//   margin: auto;
-//   // margin-right: auto;
-// }
 
-// #waiting {
-//   align: left;
-//   text-align: center;
-//   font-size: 90%;
-// }
-
-// #thanks {
-//   align: left;
-//   text-align: center;
-//   font-size: 90%;
-// }
 
 #error {
   align: left;
