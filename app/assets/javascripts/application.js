@@ -29,6 +29,7 @@ function initMap(){
     center: defaultPosition
   });
   // Create the search box and link it to the UI element.
+  // var infoWindow = new google.maps.InfoWindow;
   var input = document.getElementById('search-input');
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -37,20 +38,23 @@ function initMap(){
     searchBox.setBounds(map.getBounds());
   });
   var markers = [];
-  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true });
   directionsDisplay.setMap(map);
   // Listen for click of Meandr button
-  clickMeanderButton(markers, directionsDisplay);
+  clickMeanderButton(markers, directionsDisplay, map);
   // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
-  setEndPoint(markers, searchBox, map);
+  setEndPoint(markers, searchBox, map, 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_white.png');
   // set variable for user start location before get current loc call
   var startPosition = document.getElementById('current-user-lat').innerHTML;
   // Setting current location on map to user location
-  setStartLocation(startPosition, map, markers);
+  setStartLocation(startPosition, map, markers, 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_white.png');
 };
 
+
+
+
 // Sets an endpoint based on what a user enters in the search box on the map.
-function setEndPoint(markers, searchBox, map){
+function setEndPoint(markers, searchBox, map, url){
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
     if (places.length == 0) {
@@ -66,17 +70,17 @@ function setEndPoint(markers, searchBox, map){
       document.getElementById('desired-end-lat').innerHTML = place.geometry.location.lat();
       document.getElementById('desired-end-long').innerHTML = place.geometry.location.lng();
       // Customized icons
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
+      // var icon = {
+      //   url: place.icon,
+      //   size: new google.maps.Size(71, 71),
+      //   origin: new google.maps.Point(0, 0),
+      //   anchor: new google.maps.Point(17, 34),
+      //   scaledSize: new google.maps.Size(25, 25)
+      // };
       // Create a marker for each place.
       markers.push(new google.maps.Marker({
         map: map,
-        // icon: icon,
+        icon: url,
         title: place.name,
         position: place.geometry.location
       }));
@@ -107,7 +111,8 @@ function clickAddWaypointButton(){
       url: '/waypoints/new',
     })
     .done(function(response) {
-      $('#user-feedback').html(response)
+      $('#user-feedback').show();
+      $('#user-feedback').html(response);
     })
     }
   })
@@ -123,7 +128,7 @@ function submitWaypointForm(){
     var dropper = $('input[id= "dropper"]').val()
     var description = $('input[id= "description"]').val()
     var location = navigator.geolocation.getCurrentPosition(saveWaypoint);
-    $('#user-feedback').html('');
+    // $('#user-feedback').show();
     $('#user-feedback').html('<iframe src="http://i.kinja-img.com/gawker-media/image/upload/s--uR6Lt7Ti--/ex9sgvlnuxlxicocpri4.gif" width="50" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
   function saveWaypoint(pos) {
     var crd = pos.coords;
@@ -161,16 +166,12 @@ function submitWaypointForm(){
         $('#error').fadeOut('slow');
       }, 5000);
     })
-    .always(function(){
-      // $('#waypoint-form').html('');
-      $('#user-feedback').hide();
-    })
   };
   })
 }
 
 
-function clickMeanderButton(markers, directionsDisplay){
+function clickMeanderButton(markers, directionsDisplay, map){
   $("#find-route-button").on("click", function(){
   clearMarkers(markers);
   var startPointLat = $('#current-user-lat').html()
@@ -185,12 +186,12 @@ function clickMeanderButton(markers, directionsDisplay){
           }, 5000);
     }
     else {
-      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map, directionsDisplay);
+      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map, directionsDisplay, markers);
     }
   });
 }
 
-function setStartLocation(startPosition, map, markers){
+function setStartLocation(startPosition, map, markers, url){
   var startPosition = startPosition
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
@@ -204,6 +205,7 @@ function setStartLocation(startPosition, map, markers){
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
+        icon: url,
         title: 'Meanderer'
       });
       markers.push(marker);
@@ -216,7 +218,7 @@ function setStartLocation(startPosition, map, markers){
   }
 }
 
-function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisplay){
+function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisplay, markersArray){
   var meandr_info = {
       startLatitude: startLat,
       startLongitude: startLng,
@@ -230,10 +232,17 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
   })
   .done(function(response) {
     if (response.status == 200) {
+      // debugger
       var startPoint = convertWaypoint(response.start);
       var endPoint = convertWaypoint(response.end);
+      var tokenUrl = 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_white.png'
       var convertedWaypoints = convertWaypoints(response.waypoints);
+      var waypointTokenUrl = 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_gray.png'
+      var waypointInfo = response.waypoint_info_array
       getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
+      createMarker(startPoint, map, tokenUrl, markersArray);
+      createMarker(endPoint, map, tokenUrl, markersArray);
+      createWaypointMarkers(convertedWaypoints, map, waypointTokenUrl, markersArray, waypointInfo);
     }
     else {
       $('#error').show();
@@ -250,6 +259,32 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
         $('#error').fadeOut('fast');
       }, 5000);
   })
+}
+
+function createMarker(position, map, url, markersArray){
+  var latLng = { lat: position.lat(), lng: position.lng() };
+  var marker = new google.maps.Marker({
+    position: latLng,
+    map: map,
+    icon: url
+  });
+  markersArray.push(marker);
+  return marker;
+}
+
+function createWaypointMarkers(waypointArray, map, url, markersArray, waypointInfoArray) {
+  for (var i = 0; i < waypointArray.length; i++){
+    var marker = createMarker(waypointArray[i].location, map, url, markersArray);
+    var content = waypointInfoArray[i].description + '<br>' + 'Dropped by: ' + waypointInfoArray[i].dropped_by
+    attachInfoWindow(marker, content, map)
+  };
+}
+
+function attachInfoWindow(marker, content, map){
+  var infoWindow = new google.maps.InfoWindow({content: content});
+  google.maps.event.addListener(marker, 'click', function(){
+    infoWindow.open(map, marker);
+  });
 }
 
 function convertWaypoints(waypointArray){
@@ -274,7 +309,6 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directi
   }, function(response, status){
     if (status === 'OK') {
       directionsDisplay.setDirections(response);
-      // var routes = response.routes[0];
     } else {
       $('#error').show();
       $('#error').html('<b>Directions request failed due to ' + status + '</b>');

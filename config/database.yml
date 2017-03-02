@@ -77,7 +77,7 @@ test:
 #
 production:
   url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
-#
+
 # production:
 #   <<: *default
 #   database: Meandr_production
