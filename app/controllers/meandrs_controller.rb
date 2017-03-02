@@ -11,7 +11,7 @@ class MeandrsController < ApplicationController
         meandr_coordinates = Meander.assemble_meander_coordinates(meandr_array)
         start_coordinates = start_point.location.coordinates.reverse
         end_coordinates = end_point.location.coordinates.reverse
-        render json: { status: 200, start: start_coordinates, end: end_coordinates, waypoints: meandr_coordinates }
+        render json: { status: 200, start: start_coordinates, end: end_coordinates, waypoints: meandr_coordinates, waypoint_info_array: meandr_array }
       else
         render json: { status: 422, alert: 'Please choose a closer meandr.' }
       end
