@@ -4,10 +4,9 @@ rvm:
 services:
 - postgresql
 before_script:
+- sudo apt-get install postgresql-9.5-postgis-2.2 postgresql-9.5-postgis-2.2-scripts
 - psql -c 'create database "Meandr_test";' -U postgres
-- psql -c "create extension postgis" -U postgres
-- psql -c 'select POSTGIS_FULL_VERSION();' -U postgres
-- psql -c 'ALTER EXTENSION postgis UPDATE TO "2.2.2";' -U postgres
+- psql -c 'create extension postgis version \'2.2.2\'' -U postgres
 - psql -c 'select POSTGIS_FULL_VERSION();' -U postgres
 deploy:
   provider: heroku
@@ -17,5 +16,4 @@ deploy:
   on:
     repo: Joel-B-Williams/Meandr
 cache: bundler
-addons:
-  postgresql: "9.4"
+sudo: required
