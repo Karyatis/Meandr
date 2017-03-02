@@ -88,11 +88,18 @@ input[type=submit]:active {
   color: #CFE0DA;
 }
 
-#gif iframe{
+#user-feedback {
   display: block;
   margin: auto;
-  // margin-right: auto;
+  text-align: center;
+  font-size: 90%;
 }
+
+// #gif iframe{
+//   display: block;
+//   margin: auto;
+//   // margin-right: auto;
+// }
 
 // #waiting {
 //   align: left;
@@ -100,11 +107,11 @@ input[type=submit]:active {
 //   font-size: 90%;
 // }
 
-#thanks {
-  align: left;
-  text-align: center;
-  font-size: 90%;
-}
+// #thanks {
+//   align: left;
+//   text-align: center;
+//   font-size: 90%;
+// }
 
 #error {
   align: left;

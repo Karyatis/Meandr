@@ -107,7 +107,7 @@ function clickAddWaypointButton(){
       url: '/waypoints/new',
     })
     .done(function(response) {
-      $('#waypoint-form').html(response)
+      $('#user-feedback').html(response)
     })
     }
   })
@@ -115,7 +115,7 @@ function clickAddWaypointButton(){
 
 
 function submitWaypointForm(){
-  $('.container-fluid').on('submit', '#waypoint-form form', function(e){
+  $('.container-fluid').on('submit', '#user-feedback form', function(e){
     e.preventDefault();
     var $form = $(this);
     var url = $form.attr('action');
@@ -123,8 +123,8 @@ function submitWaypointForm(){
     var dropper = $('input[id= "dropper"]').val()
     var description = $('input[id= "description"]').val()
     var location = navigator.geolocation.getCurrentPosition(saveWaypoint);
-    $('#waypoint-form').html('');
-    $('#gif').html('<iframe src="https://www.spamcop.net/images/indicator.gif" width="50" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+    $('#user-feedback').html('');
+    $('#user-feedback').html('<iframe src="http://i.kinja-img.com/gawker-media/image/upload/s--uR6Lt7Ti--/ex9sgvlnuxlxicocpri4.gif" width="50" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
   function saveWaypoint(pos) {
     var crd = pos.coords;
     var myLatLng = {lat: crd.latitude, lng: crd.longitude};
@@ -141,10 +141,10 @@ function submitWaypointForm(){
     })
     .done(function(response) {
     if (response.status == 200) {
-      $("#thanks").html('');
-      $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
+      // $("#thanks").html('');
+      $("#user-feedback").html("<b>Thank you for sharing this location with us!</b>")
       setTimeout(function() {
-        $('#thanks').fadeOut('slow');
+        $('#user-feedback').fadeOut('slow');
       }, 5000);
     } else {
       $("#error").show();
@@ -162,8 +162,8 @@ function submitWaypointForm(){
       }, 5000);
     })
     .always(function(){
-      $('#waypoint-form').html('');
-      $('#gif').hide();
+      // $('#waypoint-form').html('');
+      $('#user-feedback').hide();
     })
   };
   })
