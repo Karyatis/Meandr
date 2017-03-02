@@ -246,10 +246,11 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
       var endPoint = convertWaypoint(response.end);
       var tokenUrl = 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_white.png'
       var convertedWaypoints = convertWaypoints(response.waypoints);
+      var waypointTokenUrl = 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_yellow.png'
       getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
       createMarker(startPoint, map, tokenUrl, markersArray);
       createMarker(endPoint, map, tokenUrl, markersArray);
-
+      createWaypointMarkers(convertedWaypoints, map, waypointTokenUrl, markersArray);
     }
     else {
       $('#error').show();
@@ -276,6 +277,12 @@ function createMarker(position, map, url, markersArray){
     icon: url
   });
   markersArray.push(marker);
+}
+
+function createWaypointMarkers(waypointArray, map, url, markersArray) {
+  for (var i = 0; i < waypointArray.length; i++){
+    createMarker(waypointArray[i].location, map, url, markersArray);
+  };
 }
 
 function convertWaypoints(waypointArray){
