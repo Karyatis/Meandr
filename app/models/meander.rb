@@ -1,33 +1,24 @@
 class Meander < ApplicationRecord
 
   def meander(current_waypoint, destination)
-    min_search_radius = 150
-    max_search_radius = 800
     distance_to_end = self.initial_distance(current_waypoint, destination)
-    route_path(current_waypoint, destination, distance_to_end, min_search_radius, max_search_radius).slice(0..-2)
+    route_path(current_waypoint, destination, distance_to_end).slice(0..-2)
   end
 
-  def route_path(current_waypoint, destination, distance_to_end, min_search_radius, max_search_radius, points_of_interest = [])
-    if distance_to_end > 160000
-    end
-
+  def route_path(current_waypoint, destination, distance_to_end, points_of_interest = [], min_search_radius = 150, max_search_radius = 800)
     next_waypoint = choose_next_waypoint(current_waypoint, destination, min_search_radius, max_search_radius)
-    if points_of_interest.length > 20
-      return points_of_interest
-    end
+    return points_of_interest if points_of_interest.length > 20
     if next_waypoint == nil
       if max_search_radius < distance_to_end
         min_search_radius += 650
         max_search_radius += 650
-        next_waypoint = route_path(current_waypoint, destination, distance_to_end, min_search_radius, max_search_radius, points_of_interest)
+        next_waypoint = route_path(current_waypoint, destination, distance_to_end, points_of_interest, min_search_radius, max_search_radius)
       else
         return points_of_interest
       end
     else
       points_of_interest << next_waypoint
-      min_search_radius = 150
-      max_search_radius = 800
-      route_path(next_waypoint, destination, distance_to_end, min_search_radius, max_search_radius, points_of_interest)
+      route_path(next_waypoint, destination, distance_to_end, points_of_interest)
     end
   end
 
