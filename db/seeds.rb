@@ -5,19 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Waypoint.create(location: 'POINT(-87.653217 41.876448)') #0 4dbc
+Waypoint.create(location: 'POINT(-87.653217 41.876448)', description: 'DBC', dropped_by: 'PH') #0 4dbc
 
-Waypoint.create(location: 'POINT(-87.647490 41.879617)') #1 5dugans
+Waypoint.create(location: 'POINT(-87.647490 41.879617)', description: 'DBC', dropped_by: 'PH') #1 5dugans
 
-Waypoint.create(location: 'POINT(-87.657240 41.876645)') #2 6wise owl
+Waypoint.create(location: 'POINT(-87.657240 41.876645)', description: 'DBC', dropped_by: 'PH') #2 6wise owl
 
-Waypoint.create(location: 'POINT(-87.656140 41.874853)') #3 7UIC Pavillion
+Waypoint.create(location: 'POINT(-87.656140 41.874853)', description: 'DBC', dropped_by: 'PH') #3 7UIC Pavillion
 
-Waypoint.create(location: 'POINT(-87.647180 41.875540)') #4 8UIC blue line
+Waypoint.create(location: 'POINT(-87.647180 41.875540)', description: 'DBC', dropped_by: 'PH') #4 8UIC blue line
 
-Waypoint.create(location: 'POINT(-87.648000 41.871955)') #5 9UIC student center
+Waypoint.create(location: 'POINT(-87.648000 41.871955)', description: 'DBC', dropped_by: 'PH') #5 9UIC student center
 
-Waypoint.create(location: 'POINT(-87.647670 41.884654)') #6 10Au Cheval
+Waypoint.create(location: 'POINT(-87.647670 41.884654)', description: 'DBC', dropped_by: 'PH') #6 10Au Cheval
 
 # What is this measure?  Distance used?
 # This is 1 mile.
