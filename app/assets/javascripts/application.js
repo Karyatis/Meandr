@@ -107,7 +107,8 @@ function clickAddWaypointButton(){
       url: '/waypoints/new',
     })
     .done(function(response) {
-      $('#user-feedback').html(response)
+      $('#user-feedback').show();
+      $('#user-feedback').html(response);
     })
     }
   })
@@ -123,7 +124,7 @@ function submitWaypointForm(){
     var dropper = $('input[id= "dropper"]').val()
     var description = $('input[id= "description"]').val()
     var location = navigator.geolocation.getCurrentPosition(saveWaypoint);
-    $('#user-feedback').html('');
+    // $('#user-feedback').show();
     $('#user-feedback').html('<iframe src="http://i.kinja-img.com/gawker-media/image/upload/s--uR6Lt7Ti--/ex9sgvlnuxlxicocpri4.gif" width="50" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
   function saveWaypoint(pos) {
     var crd = pos.coords;
@@ -160,10 +161,6 @@ function submitWaypointForm(){
       setTimeout(function() {
         $('#error').fadeOut('slow');
       }, 5000);
-    })
-    .always(function(){
-      // $('#waypoint-form').html('');
-      $('#user-feedback').hide();
     })
   };
   })
