@@ -29,7 +29,7 @@ function initMap(){
     center: defaultPosition
   });
   // Create the search box and link it to the UI element.
-  var infoWindow = new google.maps.InfoWindow;
+  // var infoWindow = new google.maps.InfoWindow;
   var input = document.getElementById('search-input');
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -282,7 +282,20 @@ function createMarker(position, map, url, markersArray){
 function createWaypointMarkers(waypointArray, map, url, markersArray) {
   for (var i = 0; i < waypointArray.length; i++){
     createMarker(waypointArray[i].location, map, url, markersArray);
+    var content = "oh hallo"
+    console.log('poop1')
+    attachInfoWindow(waypointArray[i], content, map);
   };
+}
+// NO CALL NO SHOW ====needs event delegation?
+function attachInfoWindow(marker, content, map){
+  var infoWindow = new google.maps.InfoWindow({content: content});
+  google.maps.event.addListener(marker, 'click', function(){
+    console.log('poop2')
+    // waypointInfoWindow.setContent(content);
+    waypointInfoWindow.open(map, marker);
+  });
+  // google.maps.event.addDomListener(window, 'load', initialize);
 }
 
 function convertWaypoints(waypointArray){
