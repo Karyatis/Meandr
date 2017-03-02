@@ -123,7 +123,8 @@ function submitWaypointForm(){
     var dropper = $('input[id= "dropper"]').val()
     var description = $('input[id= "description"]').val()
     var location = navigator.geolocation.getCurrentPosition(saveWaypoint);
-
+    $('#waypoint-form').html('');
+    $('#gif').html('<iframe src="https://www.spamcop.net/images/indicator.gif" width="50" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
   function saveWaypoint(pos) {
     var crd = pos.coords;
     var myLatLng = {lat: crd.latitude, lng: crd.longitude};
@@ -140,7 +141,7 @@ function submitWaypointForm(){
     })
     .done(function(response) {
     if (response.status == 200) {
-      $("#thanks").show();
+      $("#thanks").html('');
       $("#thanks").html("<b>Thank you for sharing this location with us!</b>")
       setTimeout(function() {
         $('#thanks').fadeOut('slow');
@@ -162,6 +163,7 @@ function submitWaypointForm(){
     })
     .always(function(){
       $('#waypoint-form').html('');
+      $('#gif').hide();
     })
   };
   })
