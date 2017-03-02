@@ -242,15 +242,17 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
   })
   .done(function(response) {
     if (response.status == 200) {
+      // debugger
       var startPoint = convertWaypoint(response.start);
       var endPoint = convertWaypoint(response.end);
       var tokenUrl = 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_white.png'
       var convertedWaypoints = convertWaypoints(response.waypoints);
-      var waypointTokenUrl = 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_yellow.png'
+      var waypointTokenUrl = 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_gray.png'
+      var waypointInfo = response.waypoint_info_array
       getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
       createMarker(startPoint, map, tokenUrl, markersArray);
       createMarker(endPoint, map, tokenUrl, markersArray);
-      createWaypointMarkers(convertedWaypoints, map, waypointTokenUrl, markersArray);
+      createWaypointMarkers(convertedWaypoints, map, waypointTokenUrl, markersArray, waypointInfo);
     }
     else {
       $('#error').show();
@@ -277,25 +279,22 @@ function createMarker(position, map, url, markersArray){
     icon: url
   });
   markersArray.push(marker);
+  return marker;
 }
 
-function createWaypointMarkers(waypointArray, map, url, markersArray) {
+function createWaypointMarkers(waypointArray, map, url, markersArray, waypointInfoArray) {
   for (var i = 0; i < waypointArray.length; i++){
-    createMarker(waypointArray[i].location, map, url, markersArray);
-    var content = "oh hallo"
-    console.log('poop1')
-    attachInfoWindow(waypointArray[i], content, map);
+    var marker = createMarker(waypointArray[i].location, map, url, markersArray);
+    var content = waypointInfoArray[i].description + '<br>' + 'Dropped by: ' + waypointInfoArray[i].dropped_by
+    attachInfoWindow(marker, content, map)
   };
 }
-// NO CALL NO SHOW ====needs event delegation?
+
 function attachInfoWindow(marker, content, map){
   var infoWindow = new google.maps.InfoWindow({content: content});
   google.maps.event.addListener(marker, 'click', function(){
-    console.log('poop2')
-    // waypointInfoWindow.setContent(content);
-    waypointInfoWindow.open(map, marker);
+    infoWindow.open(map, marker);
   });
-  // google.maps.event.addDomListener(window, 'load', initialize);
 }
 
 function convertWaypoints(waypointArray){
