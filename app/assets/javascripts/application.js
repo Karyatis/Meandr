@@ -38,13 +38,13 @@ function initMap(){
   map.addListener('bounds_changed', function(){
     searchBox.setBounds(map.getBounds());
   });
-  var markers = [];
+  var markerArray = [];
   var directionsDisplay = new google.maps.DirectionsRenderer;
   directionsDisplay.setMap(map);
   // Listen for click of Meandr button
   clickMeanderButton(markers, directionsDisplay, waypointInfoWindow);
   // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
-  setEndPoint(markers, searchBox, map);
+  setEndPoint(markerArray, searchBox, map);
   // set variable for user start location before get current loc call
   var startPosition = document.getElementById('current-user-lat').innerHTML;
   // Setting current location on map to user location
