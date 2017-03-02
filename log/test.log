@@ -5521,3 +5521,351 @@ Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.0ms)
   [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
   [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.653217 41.876448)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (129.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Meandr_test"[0m
+  [1m[35m (446.2ms)[0m  [1m[35mCREATE DATABASE "Meandr_test" ENCODING = 'unicode'[0m
+  [1m[35m (2633.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS postgis [0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "postgis"[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE "meanders" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (27.2ms)[0m  [1m[35mCREATE TABLE "waypoints" ("id" serial primary key, "location" geometry(POINT,0), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "description" character varying(50), "dropped_by" character varying(50))[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170301171900')[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170225002251'),
+('20170226005304'),
+('20170301171806');
+
+[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-03-02 16:15:19 UTC], ["updated_at", 2017-03-02 16:15:19 UTC]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 78ms (Views: 57.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "meanders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-03-02 16:15:19 UTC], ["updated_at", 2017-03-02 16:15:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (16.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "meanders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "meanders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (11.8ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (3.2ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.653217 41.876448)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "meanders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (0.8ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.653217 41.876448)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64749 41.879617)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64749 41.879617)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.64749 41.879617)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64767 41.884654)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64767 41.884654)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.64767 41.884654)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64767 41.884654)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 1450 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64767 41.884654)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 800)[0m
+  [1m[36mWaypoint Load (0.8ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.64767 41.884654)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "meanders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.653217 41.876448)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64749 41.879617)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64749 41.879617)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.64749 41.879617)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64767 41.884654)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64767 41.884654)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.64767 41.884654)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64767 41.884654)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 1450 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.64767 41.884654)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 800)[0m
+  [1m[36mWaypoint Load (1.1ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.64767 41.884654)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 500 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 500 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (0.7ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.653217 41.876448)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.653217 41.876448)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.653217 41.876448)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9ce4ead0c3d4044f02f72b45283"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e97079e59f2c4044f0974a3400b9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055ea10385c67e04044f035e74299d9"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9fe32a0663c4044effb2edfe75c"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e96b65a9a8054044f011b1d92b80"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e978d4fdf3b64044ef9c38b04ab6"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "waypoints" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "002000000100000000c055e9736cdf266c4044f13c579f2346"], ["created_at", 2017-03-02 16:15:20 UTC], ["updated_at", 2017-03-02 16:15:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWaypoint Load (0.6ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') < 800 AND ST_Distance_Spheroid(location, ST_GeomFromText('POINT (-87.653217 41.876448)'), 'SPHEROID["WGS 84", 6378137, 298.257223563]') > 150)[0m
+  [1m[36mWaypoint Load (0.5ms)[0m  [1m[34mSELECT "waypoints".* FROM "waypoints" WHERE (ST_DistanceSphere(location, ST_GeomFromText('POINT (-87.64767 41.884654)')) < ST_DistanceSphere(ST_GeomFromText('POINT (-87.653217 41.876448)'), ST_GeomFromText('POINT (-87.64767 41.884654)')))[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
