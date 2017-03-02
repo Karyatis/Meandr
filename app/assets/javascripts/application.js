@@ -28,6 +28,8 @@ function initMap(){
     zoom: 3,
     center: defaultPosition
   });
+  // Instantiate an info window to hold step text.
+  var waypointInfoWindow = new google.maps.InfoWindow;
   // Create the search box and link it to the UI element.
   var input = document.getElementById('search-input');
   var searchBox = new google.maps.places.SearchBox(input);
@@ -40,7 +42,7 @@ function initMap(){
   var directionsDisplay = new google.maps.DirectionsRenderer;
   directionsDisplay.setMap(map);
   // Listen for click of Meandr button
-  clickMeanderButton(markers, directionsDisplay);
+  clickMeanderButton(markers, directionsDisplay, waypointInfoWindow);
   // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
   setEndPoint(markers, searchBox, map);
   // set variable for user start location before get current loc call
@@ -113,7 +115,6 @@ function clickAddWaypointButton(){
   })
 }
 
-
 function submitWaypointForm(){
   $('.container-fluid').on('submit', '#waypoint-form form', function(e){
     e.preventDefault();
@@ -177,7 +178,7 @@ function submitWaypointForm(){
 }
 
 
-function clickMeanderButton(markers, directionsDisplay){
+function clickMeanderButton(markers, directionsDisplay, waypointInfoWindow){
   $("#find-route-button").on("click", function(){
   clearMarkers(markers);
   var startPointLat = $('#current-user-lat').html()
@@ -192,7 +193,7 @@ function clickMeanderButton(markers, directionsDisplay){
           }, 5000);
     }
     else {
-      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, map, directionsDisplay);
+      getWalkingRoute(startPointLat, startPointLng, endPointLat, endPointLng, directionsDisplay, waypointInfoWindow, markers, map);
     }
   });
 }
@@ -223,7 +224,7 @@ function setStartLocation(startPosition, map, markers){
   }
 }
 
-function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisplay){
+function getWalkingRoute(startLat, startLng, endLat, endLng, directionsDisplay, waypointInfoWindow, markers, map){
   var meandr_info = {
       startLatitude: startLat,
       startLongitude: startLng,
@@ -240,7 +241,9 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
       var startPoint = convertWaypoint(response.start);
       var endPoint = convertWaypoint(response.end);
       var convertedWaypoints = convertWaypoints(response.waypoints);
-      getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay);
+      var waypointsArray = response.waypoint_info_array // [#<>, #<>]
+      // console.log(response.waypoint_info_array) // includes dropped_by: and description:
+      getDirectionsMap(startPoint, endPoint, convertedWaypoints, waypointsArray, directionsDisplay, waypointInfoWindow, map, markers);
     }
     else {
       $('#error').show();
@@ -259,28 +262,44 @@ function getWalkingRoute(startLat, startLng, endLat, endLng, map, directionsDisp
   })
 }
 
+function convertWaypoint(waypoint){
+  return new google.maps.LatLng(waypoint[0], waypoint[1]);
+}
+
 function convertWaypoints(waypointArray){
   var googleWaypoints = [];
   for (var i=0; i<waypointArray.length; i++){
+    // console.log(waypointArray[i])
     googleWaypoints.push({location: convertWaypoint(waypointArray[i]), stopover: false})
   }
   return googleWaypoints;
 }
 
-function convertWaypoint(waypoint){
-  return new google.maps.LatLng(waypoint[0], waypoint[1]);
-}
+// PH's idea to convert markers in similar fashion
+// function setWaypointInfo(waypointArray){
+//   for(var i=0; i<waypointArray.length; i++){
 
-function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directionsDisplay){
+//   }
+// }
+
+function getDirectionsMap(startPoint, endPoint, convertedWaypoints, waypointsArray, directionsDisplay, waypointInfoWindow, map, markers){
   var directionsService = new google.maps.DirectionsService;
-  directionsService.route({
+  var request = {
     origin: startPoint,
     destination: endPoint,
     waypoints: convertedWaypoints,
     travelMode: 'WALKING'
-  }, function(response, status){
+    // travelMode: google.maps.TravelMode.WALKING
+    };
+  directionsService.route(request, function(response, status){
     if (status === 'OK') {
+      debugger
       directionsDisplay.setDirections(response);
+      showSteps(response, markers, convertedWaypoints, waypointInfoWindow, map);
+
+      var startLocation = new Object ();
+      var endLocation = new Object ();
+      var waypointLocations = []
       // var routes = response.routes[0];
     } else {
       $('#error').show();
@@ -292,11 +311,52 @@ function getDirectionsMap(startPoint, endPoint, convertedWaypoints, map, directi
   })
 }
 
+
+// first clear existing markers from the map
 function clearMarkers(markers){
  markers.forEach(function(marker) {
     marker.setMap(null);
   });
   markers = [];
+}
+
+// For each step, place a marker, and add the text to the marker's infowindow.  Also attach the marker to an array so we can keep track of it and remove it when calculating new routes.
+function showSteps(directionResult, markers, convertedWaypoints, waypointInfoWindow, map) {
+  var legs = directionResult.routes[0].legs;
+  console.log(legs)
+  for (var i = 0; i < legs.steps.length; i++) {
+    console.log(convertedWaypoints[i]);
+    console.log(markers[i]);
+    var marker = markers[i] = markers[i] || new google.maps.Marker;
+    marker.setMap(map);
+    marker.setPosition(legs.steps[i].start_location);
+    console.log(marker)
+  }
+  console.log(markers)
+}
+
+// Set markers on map and then set listener for click function to show info box
+// Need to call once for start then once for end point then
+// Pass in each regular waypoint to this function to let it set.
+function createMarker(waypointInfoWindow, latlng, label, url) {
+  var contentString = '<b>' + label + '</b><br>' + html;
+  attachInstructionText(waypointInfoWindow, marker, contentString, map);
+  var marker = new google.maps.Marker({
+    position: latlng,
+    map: map,
+    // icon: takes an image url if we want to pass one in,
+    title: label,
+    zIndex: Math.round(latlng.lat() * -100000) << 5
+  });
+}
+
+// Open an info window when the marker is clicked on, containing the text of the step.
+function attachInstructionText(waypointInfoWindow, marker, contentString, map){
+    google.maps.event.addListener(marker, 'click', function() {
+      waypointInfoWindow.setContent(contentString);
+      waypointInfoWindow.open(map, marker);
+    });
+  google.maps.event.addDomListener(window, 'load', initialize);
 }
 
 

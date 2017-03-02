@@ -5,19 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Waypoint.create(location: 'POINT(-87.653217 41.876448)') #0 4dbc
+Waypoint.create(location: 'POINT(-87.653217 41.876448)', dropped_by: 'someone', description: 'dbc') #0 4dbc
 
-Waypoint.create(location: 'POINT(-87.647490 41.879617)') #1 5dugans
+Waypoint.create(location: 'POINT(-87.647490 41.879617)', dropped_by: 'someone', description: 'dugans') #1 5dugans
 
-Waypoint.create(location: 'POINT(-87.657240 41.876645)') #2 6wise owl
+Waypoint.create(location: 'POINT(-87.657240 41.876645)', dropped_by: 'someone', description: 'wise owl') #2 6wise owl
 
-Waypoint.create(location: 'POINT(-87.656140 41.874853)') #3 7UIC Pavillion
+Waypoint.create(location: 'POINT(-87.656140 41.874853)', dropped_by: 'someone', description: 'UIC P') #3 7UIC Pavillion
 
-Waypoint.create(location: 'POINT(-87.647180 41.875540)') #4 8UIC blue line
+Waypoint.create(location: 'POINT(-87.647180 41.875540)', dropped_by: 'someone', description: 'blue line') #4 8UIC blue line
 
-Waypoint.create(location: 'POINT(-87.648000 41.871955)') #5 9UIC student center
+Waypoint.create(location: 'POINT(-87.648000 41.871955)', dropped_by: 'someone', description: 'UIC SC') #5 9UIC student center
 
-Waypoint.create(location: 'POINT(-87.647670 41.884654)') #6 10Au Cheval
+Waypoint.create(location: 'POINT(-87.647670 41.884654)', dropped_by: 'someone', description: 'Au Cheval') #6 10Au Cheval
 
 # What is this measure?  Distance used?
 # This is 1 mile.
@@ -25,11 +25,11 @@ Waypoint.create(location: 'POINT(-87.647670 41.884654)') #6 10Au Cheval
 #centered on DBC give or take
 #41.876452, -87.653214
 
-1000.times do
-  x = rand(41.86037366..41.88504033)
-  y = rand(-87.661557333..-87.64489066)
-  Waypoint.create(location: "POINT(#{y} #{x})")
-end
+# 1000.times do
+#   x = rand(41.86037366..41.88504033)
+#   y = rand(-87.661557333..-87.64489066)
+#   Waypoint.create(location: "POINT(#{y} #{x})")
+# end
 
 # # #1 mile north
 # #41.890891, -87.653244

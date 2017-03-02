@@ -8,10 +8,12 @@ class MeandrsController < ApplicationController
       meandr_distance = meandr.initial_distance(start_point, end_point)
       if meandr_distance < 160000
         meandr_array = meandr.meander(start_point, end_point)
+        p "Who loves print statements!" * 100
+        p meandr_array
         meandr_coordinates = Meander.assemble_meander_coordinates(meandr_array)
         start_coordinates = start_point.location.coordinates.reverse
         end_coordinates = end_point.location.coordinates.reverse
-        render json: { status: 200, start: start_coordinates, end: end_coordinates, waypoints: meandr_coordinates }
+        render json: { status: 200, start: start_coordinates, end: end_coordinates, waypoints: meandr_coordinates, waypoint_info_array: meandr_array }
       else
         render json: { status: 422, alert: 'Please choose a closer meandr.' }
       end
