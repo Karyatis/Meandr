@@ -28,7 +28,7 @@ Waypoint.create(location: 'POINT(-87.647670 41.884654)') #6 10Au Cheval
 1000.times do
   x = rand(41.86037366..41.88504033)
   y = rand(-87.661557333..-87.64489066)
-  Waypoint.create(location: "POINT(#{y} #{x})")
+  Waypoint.create(location: "POINT(#{y} #{x})", dropped_by: "Us", description: "A cool thing")
 end
 
 # # #1 mile north
