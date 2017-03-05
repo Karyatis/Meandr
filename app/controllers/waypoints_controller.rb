@@ -10,7 +10,7 @@ class WaypointsController < ApplicationController
 
 
   def create
-    waypoint = Waypoint.new(location: "POINT(#{params[:lng]}) #{params[:lat]} ", description: params[:description], dropped_by: params[:dropper])
+    waypoint = Waypoint.new(location: "POINT(#{params[:lng]} #{params[:lat]})", description: params[:description], dropped_by: params[:dropper])
     if waypoint.save
       if request.xhr?
         render json: { status: 200, waypoint: waypoint }
@@ -21,5 +21,11 @@ class WaypointsController < ApplicationController
       end
     end
   end
+
+    private
+
+  # def waypoint_params
+  #   params.permit([:lat, :lng, :description, :dropped_by])
+  # end
 
 end
