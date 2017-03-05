@@ -49,8 +49,8 @@ Waypoint.create(location: 'POINT(-87.628011 41.877614)', description: 'Chill Par
 Waypoint.create(location: 'POINT(-87.630732 41.884157)', description: 'Daley Center', dropped_by: 'Kelly Arwine')
 Waypoint.create(location: 'POINT(-87.627112 41.887376)', description: 'Chicago River Walk', dropped_by: 'Ellie Poley')
 Waypoint.create(location: 'POINT(-87.608706 41.891256)', description: 'The Best Restaurant Ever!  Bubba Gumps Shrimp', dropped_by: 'Matt Baker')
-Waypoint.create(location: 'POINT(-87.628034 41.877206)', description: 'Old library with lots of sweet coding books, even Code Complete!', dropped_by: 'Avnair Shanan')
-Waypoint.create(location: 'POINT(-87.644100 41.879443)', description: 'Good ol, St. Patricks church.  Reminds me of our all time favorite student Patrick Hoban', dropped_by: 'Kelly Arwine')
+Waypoint.create(location: 'POINT(-87.628034 41.877206)', description: 'Old library with lots of sweet coding books', dropped_by: 'Avner Shanan')
+Waypoint.create(location: 'POINT(-87.644100 41.879443)', description: 'Good ol, St. Patricks church.', dropped_by: 'Kelly Arwine')
 Waypoint.create(location: 'POINT(-87.649862 41.877882)', description: 'Jaks tap.  And they all think Im in San Francisco.', dropped_by: 'Alyssa Diaz')
 
 
