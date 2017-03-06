@@ -25,3 +25,5 @@ Meandr will generate a route based on user-contributed waypoints.
 
 To use this app, visit https://meandr.herokuapp.com/ on your phone. Happy wandering!
 
+
+https://travis-ci.org/Joel-B-Williams/Meandr.svg?branch=master
