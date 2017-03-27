@@ -26,6 +26,4 @@ class Waypoint < ApplicationRecord
     waypoints_closer = Waypoint.find_waypoints_closer_to_end(self, destination)
     waypoint_options = (waypoints_in_band & waypoints_closer)
   end
-
-
 end
