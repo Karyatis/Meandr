@@ -5,7 +5,6 @@ class Waypoint < ApplicationRecord
   def self.waypoints_in_radius_of(current_waypoint, min_search_radius, max_search_radius)
     rando = 'SPHEROID["WGS 84", 6378137, 298.257223563]'
     waypoint_text = current_waypoint.location.as_text
-    p waypoint_text
     sql_query =
       "ST_Distance_Spheroid(location, ST_GeomFromText('#{waypoint_text}'), '#{rando}') < #{max_search_radius} AND ST_Distance_Spheroid(location, ST_GeomFromText('#{waypoint_text}'), '#{rando}') > #{min_search_radius}"
     Waypoint.where(sql_query)
